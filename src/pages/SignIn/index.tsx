@@ -1,4 +1,5 @@
-import { GoogleLogo, Link } from 'phosphor-react'
+import { GoogleLogo } from 'phosphor-react'
+import { Link } from 'react-router-dom'
 
 import { Button, Container, Description, Form, Input } from './styles'
 
