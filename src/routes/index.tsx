@@ -1,11 +1,13 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from 'react-router-dom'
 
-import { Annotations } from "../pages/Annotations";
+import { SignIn } from '../pages/SignIn'
+import { SignUp } from '../pages/SignUp'
 
-export function Router(){
+export function Router() {
   return (
     <Routes>
-      <Route path="/" element={<Annotations />}/>
+      <Route path="/" element={<SignIn />} />
+      <Route path="/signUp" element={<SignUp />} />
     </Routes>
   )
 }
