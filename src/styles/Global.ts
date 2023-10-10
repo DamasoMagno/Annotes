@@ -20,6 +20,12 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    @media screen and (max-width: 728px) {
+      font-size: .875rem;
+    }    
+  }
+
   body {
     background: #202024;
     height: 100vh;

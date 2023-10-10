@@ -4,6 +4,7 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form } from './styles'
+import { Message } from '../SignIn/styles'
 
 export function SignUp() {
   return (
@@ -21,10 +22,10 @@ export function SignUp() {
           <Button>Criar conta</Button>
         </form>
 
-        <span className="register">
+        <Message className="login">
           Já tem conta?
-          <Link to="/"> Entrar</Link>
-        </span>
+          <Link to="/login">Entrar</Link>
+        </Message>
       </Form>
     </Container>
   )

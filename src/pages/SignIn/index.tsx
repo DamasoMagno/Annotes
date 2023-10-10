@@ -2,9 +2,9 @@ import { GoogleLogo } from 'phosphor-react'
 import { Link } from 'react-router-dom'
 
 import { Button } from '../../components/Button'
-
-import { Container, Description, Form } from './styles'
 import { Input } from '../../components/Input'
+
+import { Container, Description, Form, Message } from './styles'
 
 export function SignIn() {
   return (
@@ -21,10 +21,10 @@ export function SignIn() {
           <Button>Fazer login</Button>
         </form>
 
-        <span className="register">
+        <Message className="register">
           Não tem conta?
-          <Link to="/signUp"> Registre-se</Link>
-        </span>
+          <Link to="/signUp">Registre-se</Link>
+        </Message>
 
         <Button variant="outline">
           <GoogleLogo />
