@@ -9,7 +9,7 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   flex-direction: column;
   color: ${(props) => props.theme.colors['--white']};
   background: ${(props) => props.theme.colors['--neutral-950']};
-  height: 100%;
+  height: 100vh;
 
   ${(props) => {
     return (
@@ -26,7 +26,8 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   @media (min-width: 1024px) {
     display: flex;
     width: 320px;
-    position: static;
+    position: fixed;
+    z-index: 9999;
   }
 
   header {

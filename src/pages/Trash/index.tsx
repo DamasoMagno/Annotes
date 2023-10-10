@@ -1,10 +1,17 @@
 import { useState } from 'react'
+import { TrashSimple } from 'phosphor-react'
 
-import { Input } from '../../components/Input'
 import { Sidebar } from '../../components/Sidebar'
 import { Header } from '../../components/Header'
+import { Annotation } from '../../components/Annotation'
 
-import { Container, Content } from './styles'
+import {
+  Annotations,
+  Container,
+  Content,
+  TrashAlert,
+  TrashContainer,
+} from './styles'
 
 export function Trash() {
   const [sideBarIsOpen, setSideBarIsOpen] = useState(false)
@@ -19,11 +26,26 @@ export function Trash() {
       <Content>
         <Header onSideIsOpen={setSideBarIsOpen} />
 
-        <div>
-          <Input placeholder="Buscar anotação" />
-        </div>
+        <TrashContainer>
+          <TrashAlert>
+            <div>
+              <div className="icon">
+                <TrashSimple />
+              </div>
+              Suas anotações serão removidas em até 7 dias
+            </div>
+            <button>Excluir anotações</button>
+          </TrashAlert>
 
-        <main></main>
+          <Annotations>
+            <Annotation type="trashed" />
+            <Annotation type="trashed" />
+            <Annotation type="trashed" />
+            <Annotation type="trashed" />
+            <Annotation type="trashed" />
+            <Annotation type="trashed" />
+          </Annotations>
+        </TrashContainer>
       </Content>
     </Container>
   )
