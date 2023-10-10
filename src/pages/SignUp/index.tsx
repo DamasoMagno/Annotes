@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 
-import { Button, Container, Description, Form, Input } from './styles'
+import { Button } from '../../components/Button'
+import { Input } from '../../components/Input'
+
+import { Container, Description, Form } from './styles'
 
 export function SignUp() {
   return (
@@ -12,21 +15,9 @@ export function SignUp() {
 
       <Form>
         <form>
-          <Input>
-            <label htmlFor="name">Nome</label>
-            <input id="name" />
-          </Input>
-
-          <Input>
-            <label htmlFor="email">Email</label>
-            <input id="email" />
-          </Input>
-
-          <Input>
-            <label htmlFor="password">Senha</label>
-            <input type="password" id="password" />
-          </Input>
-
+          <Input label="Nome" />
+          <Input label="Email" />
+          <Input label="Senha" />
           <Button>Criar conta</Button>
         </form>
 
