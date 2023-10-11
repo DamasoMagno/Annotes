@@ -1,33 +1,24 @@
-import { css, styled } from 'styled-components'
+import styled from 'styled-components'
 
 interface SidebarProps {
   isOpen: boolean
 }
 
 export const SidebarContainer = styled.aside<SidebarProps>`
-  display: none;
+  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
   flex-direction: column;
+
   color: ${(props) => props.theme.colors['--white']};
   background: ${(props) => props.theme.colors['--neutral-950']};
   height: 100vh;
+  width: 100%;
 
-  ${(props) => {
-    return (
-      props.isOpen &&
-      css`
-        display: flex;
-        position: fixed;
-        z-index: 999;
-        width: 100%;
-      `
-    )
-  }}
+  z-index: 9999;
+  position: fixed;
 
   @media (min-width: 1024px) {
     display: flex;
     width: 320px;
-    position: fixed;
-    z-index: 9999;
   }
 
   header {

@@ -2,13 +2,13 @@ import { List } from 'phosphor-react'
 import { HeaderContainer } from './styles'
 
 interface HeaderProps {
-  onSideIsOpen(value: boolean): void
+  onOpenSideBar(): void
 }
 
-export function Header({ onSideIsOpen }: HeaderProps) {
+export function Header({ onOpenSideBar }: HeaderProps) {
   return (
     <HeaderContainer>
-      <button onClick={() => onSideIsOpen(true)}>
+      <button onClick={onOpenSideBar}>
         <List />
       </button>
 

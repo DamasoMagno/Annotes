@@ -12,6 +12,7 @@ export const AnnotationContainer = styled.div`
 
     strong {
       color: ${(props) => props.theme.colors['--gray-50']};
+      font-weight: bold;
       font-size: 1.5rem;
     }
 
@@ -49,14 +50,15 @@ export const AnnotationContainer = styled.div`
     }
 
     button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border: 0;
       background-color: transparent;
       color: white;
       font-size: 1rem;
       cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   }
 `

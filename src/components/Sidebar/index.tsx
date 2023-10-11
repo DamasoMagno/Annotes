@@ -1,19 +1,21 @@
 import { NavLink } from 'react-router-dom'
-import { SidebarContainer } from './styles'
-import { Button } from '../Button'
 import { SignOut, X } from 'phosphor-react'
 
+import { Button } from '../Button'
+
+import { SidebarContainer } from './styles'
+
 interface SidebarProps {
-  isOpen: boolean
-  setsidebarIsOpen: () => void
+  sidebarIsOpen: boolean
+  onCloseSidebar: () => void
 }
 
-export function Sidebar({ isOpen, setsidebarIsOpen }: SidebarProps) {
+export function Sidebar({ sidebarIsOpen, onCloseSidebar }: SidebarProps) {
   return (
-    <SidebarContainer isOpen={isOpen}>
+    <SidebarContainer isOpen={sidebarIsOpen}>
       <header>
         <h1>Annotes</h1>
-        <button onClick={setsidebarIsOpen}>
+        <button onClick={onCloseSidebar}>
           <X />
         </button>
       </header>

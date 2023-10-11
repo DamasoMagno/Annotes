@@ -16,9 +16,9 @@
 
 # RN 
 - [ ] Case an email is already registered, other users will not be able to use it.
-- [ ] Caso algum campo de autenticação esteja incorreto, o mesmo não conseguirá se autenticar ou criar uma conta.
-- [ ] Caso usuario informe uma senha menor que seis digitos, será impossibilitado de prosseguir com seu cadastro.
-- [ ] Caso o usuario não esteja logado, o memso não terá acesso as anotações.
-- [ ] Caso uma anotação seja privada, outros usuários não poderão modifica-la.
-- [ ] Caso o usuario não recupere a anotação, ela deverá ser removida do banco.
+- [ ] Case some field is incorrect, the user will not be able to authenticate or create an account.
+- [ ] Case the user enters a password shorter than six digits, it will be not to continue with their registration.
+- [ ] Case the user is not logged in, they will not have access to the annotation.
+- [ ] Case an annotation is private, other users will not be able to modify it.
+- [ ] Case the user does not recover the note, it must be removed from the database.
 

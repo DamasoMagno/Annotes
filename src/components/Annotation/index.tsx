@@ -1,8 +1,9 @@
-import { ArrowCounterClockwise } from 'phosphor-react'
+import { ArrowCounterClockwise, TrashSimple } from 'phosphor-react'
+
 import { AnnotationContainer } from './styles'
 
 interface AnnotationProps {
-  type: 'default' | 'trashed'
+  type?: 'default' | 'trashed'
 }
 
 export function Annotation({ type = 'default' }: AnnotationProps) {
@@ -21,16 +22,23 @@ export function Annotation({ type = 'default' }: AnnotationProps) {
 
       <footer>
         {type === 'trashed' ? (
-          <span>Remoção em 3 dias</span>
+          <>
+            <span>Remoção em 3 dias</span>
+            <button>
+              <ArrowCounterClockwise />
+            </button>
+          </>
         ) : (
-          <div className="tags">
-            <span>#escola</span>
-            <span>#escola</span>
-          </div>
+          <>
+            <div className="tags">
+              <span>#lorem</span>
+            </div>
+
+            <button>
+              <TrashSimple />
+            </button>
+          </>
         )}
-        <button>
-          <ArrowCounterClockwise />
-        </button>
       </footer>
     </AnnotationContainer>
   )

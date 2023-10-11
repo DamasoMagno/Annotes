@@ -1,23 +1,18 @@
-import { useState } from 'react'
+import { Annotation } from '../../components/Annotation'
 
-import { Sidebar } from '../../components/Sidebar'
-import { Header } from '../../components/Header'
-
-import { Container, Content } from './styles'
+import { AnnotationsList, Container } from './styles'
 
 export function Annotations() {
-  const [sideBarIsOpen, setSideBarIsOpen] = useState(false)
-
   return (
     <Container>
-      <Sidebar
-        isOpen={sideBarIsOpen}
-        setsidebarIsOpen={() => setSideBarIsOpen(false)}
-      />
-
-      <Content>
-        <Header onSideIsOpen={setSideBarIsOpen} />
-      </Content>
+      <AnnotationsList>
+        <Annotation />
+        <Annotation />
+        <Annotation />
+        <Annotation />
+        <Annotation />
+        <Annotation />
+      </AnnotationsList>
     </Container>
   )
 }

@@ -1,25 +1,11 @@
 import { styled } from 'styled-components'
 
 export const Container = styled.div`
-  display: flex;
-  height: 100vh;
-`
-
-export const Content = styled.div`
-  position: relative;
-  width: 100%;
-`
-
-export const TrashContainer = styled.div`
   padding: 5rem 1.5rem 1rem;
 
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  @media (min-width: 1024px) {
-    margin-left: 320px;
-  }
 `
 
 export const TrashAlert = styled.div`
