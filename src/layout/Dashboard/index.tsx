@@ -4,7 +4,7 @@ import { Outlet } from 'react-router-dom'
 import { Sidebar } from '../../components/Sidebar'
 import { Header } from '../../components/Header'
 
-import { Container, Content, DashboardContent } from './styles'
+import { Container, Content } from './styles'
 
 export function Dashboard() {
   const [sideBarIsOpen, setSideBarIsOpen] = useState(false)
@@ -23,9 +23,9 @@ export function Dashboard() {
       <Content>
         <Header onOpenSideBar={handleToggleSidebar} />
 
-        <DashboardContent>
+        <div className="content">
           <Outlet />
-        </DashboardContent>
+        </div>
       </Content>
     </Container>
   )

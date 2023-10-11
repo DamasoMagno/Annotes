@@ -12,7 +12,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, icon: Icon, ...props }, refs) => {
     return (
       <Container>
-        <label htmlFor={label}>{label}</label>
+        {label && <label htmlFor={label}>{label}</label>}
 
         <div className="field">
           <input id={label} {...props} ref={refs} />
