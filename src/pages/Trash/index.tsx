@@ -2,14 +2,14 @@ import { TrashSimple } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 
-import { Annotations, TrashAlert, Container } from './styles'
+import { AnnotationList, TrashAlert, Container } from './styles'
 
 export function Trash() {
   return (
     <Container>
       <TrashAlert>
-        <div>
-          <div className="icon">
+        <div className="message">
+          <div>
             <TrashSimple />
           </div>
           Suas anotações serão removidas em até 7 dias
@@ -18,9 +18,9 @@ export function Trash() {
         <button>excluir anotações</button>
       </TrashAlert>
 
-      <Annotations>
-        <Annotation type="trashed" />
-      </Annotations>
+      <AnnotationList>
+        <Annotation type="trashed" to="/" />
+      </AnnotationList>
     </Container>
   )
 }

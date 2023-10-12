@@ -21,6 +21,8 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
+    transition: font-size .25s;
+
     @media screen and (max-width: 728px) {
       font-size: .875rem;
     }    

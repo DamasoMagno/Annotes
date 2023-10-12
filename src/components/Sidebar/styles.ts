@@ -1,11 +1,11 @@
 import styled from 'styled-components'
 
 interface SidebarProps {
-  isOpen: boolean
+  open: boolean
 }
 
 export const SidebarContainer = styled.aside<SidebarProps>`
-  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+  display: ${(props) => (props.open ? 'flex' : 'none')};
   flex-direction: column;
 
   color: ${(props) => props.theme.colors['--white']};
@@ -18,7 +18,7 @@ export const SidebarContainer = styled.aside<SidebarProps>`
 
   @media (min-width: 1024px) {
     display: flex;
-    width: 320px;
+    max-width: 320px;
   }
 
   header {

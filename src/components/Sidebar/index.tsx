@@ -1,9 +1,10 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { SignOut, X } from 'phosphor-react'
 
 import { Button } from '../Button'
 
 import { SidebarContainer } from './styles'
+import { useEffect } from 'react'
 
 interface SidebarProps {
   sidebarIsOpen: boolean
@@ -11,8 +12,14 @@ interface SidebarProps {
 }
 
 export function Sidebar({ sidebarIsOpen, onCloseSidebar }: SidebarProps) {
+  const { pathname } = useLocation()
+
+  useEffect(() => {
+    onCloseSidebar()
+  }, [pathname])
+
   return (
-    <SidebarContainer isOpen={sidebarIsOpen}>
+    <SidebarContainer open={sidebarIsOpen}>
       <header>
         <h1>Annotes</h1>
         <button onClick={onCloseSidebar}>

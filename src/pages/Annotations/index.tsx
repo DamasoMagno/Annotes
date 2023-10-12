@@ -1,4 +1,4 @@
-import { FunnelSimple, MagnifyingGlass } from 'phosphor-react'
+import { MagnifyingGlass } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
@@ -25,18 +25,8 @@ export function Annotations() {
       </div>
 
       <AnnotationsList>
-        <div className="select">
-          <span>Favoritos</span>
-          <FunnelSimple />
-        </div>
-
         <div className="annotations">
-          <Annotation />
-          <Annotation />
-          <Annotation />
-          <Annotation />
-          <Annotation />
-          <Annotation />
+          <Annotation to="/" />
         </div>
       </AnnotationsList>
     </Container>

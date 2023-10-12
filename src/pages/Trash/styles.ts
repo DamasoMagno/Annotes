@@ -19,24 +19,18 @@ export const TrashAlert = styled.div`
 
   display: flex;
   align-items: center;
-  flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
 
-  @media (min-width: 728px) {
-    flex-direction: row;
-    width: 100%;
-  }
-
-  div {
+  .message {
     display: flex;
     align-items: center;
     gap: 0.5rem;
 
-    .icon {
+    svg {
       border-radius: 0.375rem;
       background: rgba(32, 32, 36, 0.5);
-      font-size: 1rem;
+      font-size: 1.5rem;
       padding: 0.25rem;
 
       display: flex;
@@ -49,7 +43,6 @@ export const TrashAlert = styled.div`
     background-color: transparent;
     border-radius: 8px;
     border: 0;
-    width: 100%;
     color: ${(props) => props.theme.colors['--gray-300']};
     cursor: pointer;
     background-color: #202024;
@@ -58,14 +51,18 @@ export const TrashAlert = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+  }
 
-    @media (min-width: 728px) {
-      width: auto;
+  @media (max-width: 568px) {
+    flex-direction: column;
+
+    button {
+      width: 100%;
     }
   }
 `
 
-export const Annotations = styled.div`
+export const AnnotationList = styled.div`
   margin-top: 2rem;
 
   display: flex;
