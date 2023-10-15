@@ -3,11 +3,11 @@ import { ThemeProvider } from 'styled-components'
 import { Router } from './routes'
 
 import { GlobalStyles } from './styles/Global'
-import { THEME } from './styles/Themes'
+import { defaultThemes } from './styles/themes/defaultTheme'
 
 export function App() {
   return (
-    <ThemeProvider theme={THEME}>
+    <ThemeProvider theme={defaultThemes}>
       <BrowserRouter>
         <Router />
         <GlobalStyles />

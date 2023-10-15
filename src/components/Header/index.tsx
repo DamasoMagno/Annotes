@@ -1,4 +1,4 @@
-import { List } from 'phosphor-react'
+import { BellSimple, List } from 'phosphor-react'
 import * as Avatar from '@radix-ui/react-avatar'
 
 import { HeaderContainer } from './styles'
@@ -15,7 +15,11 @@ export function Header({ onOpenSideBar }: HeaderProps) {
       </button>
 
       <div>
-        <span>Damaso</span>
+        <div className="notification">
+          <BellSimple />
+          <div />
+        </div>
+
         <Avatar.Root>
           <Avatar.Image src="https://github.com/DamasoMagno.png" alt="" />
           <Avatar.Fallback delayMs={350}>DM</Avatar.Fallback>

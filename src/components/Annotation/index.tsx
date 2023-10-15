@@ -29,9 +29,15 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
         {type === 'trashed' ? (
           <>
             <span>Remoção em 3 dias</span>
-            <button>
-              <ArrowCounterClockwise />
-            </button>
+
+            <div className="actions">
+              <button>
+                <ArrowCounterClockwise />
+              </button>
+              <button>
+                <TrashSimple />
+              </button>
+            </div>
           </>
         ) : (
           <>

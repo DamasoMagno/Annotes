@@ -18,14 +18,29 @@ export const HeaderContainer = styled.header`
     align-items: center;
     gap: 1rem;
 
-    span {
-      color: ${(props) => props.theme.colors['--gray-300']};
-      font-size: 0.875rem;
+    .notification {
+      position: relative;
+      cursor: pointer;
+
+      svg {
+        font-size: 1.25rem;
+        color: ${(props) => props.theme.colors['--gray-300']};
+      }
+
+      div {
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        background: red;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+      }
     }
 
     img {
-      width: 3rem;
-      height: 3rem;
+      width: 2rem;
+      height: 2rem;
       border-radius: 50%;
     }
   }

@@ -1,4 +1,4 @@
-export const THEME = {
+export const defaultThemes = {
   colors: {
     '--white': '#fff',
     '--gray-50': ' #F9FAFB',

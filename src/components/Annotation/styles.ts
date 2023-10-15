@@ -26,16 +26,23 @@ export const Container = styled.div`
       }
     }
 
-    button {
-      border: 0;
-      background-color: transparent;
-      color: white;
-      font-size: 1rem;
-      cursor: pointer;
-
+    .actions {
       display: flex;
       align-items: center;
       justify-content: center;
+      gap: 1rem;
+
+      button {
+        border: 0;
+        background-color: transparent;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
     }
   }
 `
