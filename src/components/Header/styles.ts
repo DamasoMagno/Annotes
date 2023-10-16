@@ -2,7 +2,7 @@ import { styled } from 'styled-components'
 
 export const HeaderContainer = styled.header`
   position: absolute;
-  top: 0;
+  top: 4px;
   right: 24px;
   left: 0;
   padding: 0.5rem 1rem;
@@ -60,7 +60,7 @@ export const Actions = styled.div`
     gap: 0.5rem;
 
     svg {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
     }
 
     span {
@@ -75,6 +75,10 @@ export const Actions = styled.div`
     @media (min-width: 1024px) {
       span {
         display: block;
+      }
+
+      svg {
+        font-size: 1.25rem;
       }
     }
   }
