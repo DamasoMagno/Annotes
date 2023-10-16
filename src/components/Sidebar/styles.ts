@@ -47,18 +47,30 @@ export const SidebarContainer = styled.aside<SidebarProps>`
 
   nav {
     margin-top: 4rem;
+    padding: 0 2rem;
+
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 0 2rem;
 
     a {
       text-decoration: none;
       font-size: 1rem;
       color: ${(props) => props.theme.colors['--gray-400']};
+      transition: color 0.25s;
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
 
       &.active {
         color: ${(props) => props.theme.colors['--gray-200']};
+      }
+
+      @media (max-width: 1024px) {
+        svg {
+          display: none;
+        }
       }
     }
   }

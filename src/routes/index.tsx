@@ -13,7 +13,7 @@ export function Router() {
     <Routes>
       <Route path="/" element={<Dashboard />}>
         <Route path="" element={<Annotations />} />
-        <Route path="/annote/:annoteId" element={<Annote />} />
+        <Route path="/annote" element={<Annote />} />
         <Route path="trash" element={<Trash />} />
       </Route>
 

@@ -5,52 +5,18 @@ export const Container = styled.div`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   .filters {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-
+    max-width: 478px;
     width: 100%;
 
-    @media (min-width: 1024px) {
-      flex-direction: row;
-    }
-  }
-`
-
-export const Tags = styled.div`
-  height: 3rem;
-  background-color: ${(props) => props.theme.colors['--zinc-950']};
-  border-radius: 4px;
-  border: 1px dashed black;
-  padding: 0 1rem;
-  max-width: 290px;
-  width: 100%;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  div.separator {
-    height: 25px;
-    width: 2px;
-    border-radius: 24px;
-    background-color: #374151;
-  }
-
-  div.tags {
-    display: flex;
+    display: grid;
     align-items: center;
-    gap: 0.25rem;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
 
-    span {
-      background-color: #202024;
-      color: ${(props) => props.theme.colors['--gray-300']};
-      font-size: 0.875rem;
-      border-radius: 4px;
-      padding: 0.25rem 0.5rem;
+    @media (min-width: 523px) {
+      grid-template-columns: 1fr 118px;
     }
   }
 `

@@ -1,7 +1,7 @@
 import * as Select from '@radix-ui/react-select'
 import { Tag } from 'phosphor-react'
 
-import { Trigger } from './styles'
+import { Trigger, Content, Item, Viewport } from './styles'
 
 export function SelectTag() {
   return (
@@ -10,11 +10,11 @@ export function SelectTag() {
         <Select.Icon>
           <Tag />
         </Select.Icon>
-        <Select.Value placeholder="Selecionar tags" />
+        <Select.Value placeholder="Tags" />
       </Trigger>
 
-      {/* <Select.Portal>
-        <Content>
+      <Select.Portal>
+        <Content position="popper" sideOffset={5}>
           <Viewport>
             <Select.Group>
               <Item value="t">T</Item>
@@ -26,7 +26,7 @@ export function SelectTag() {
             </Select.Group>
           </Viewport>
         </Content>
-      </Select.Portal> */}
+      </Select.Portal>
     </Select.Root>
   )
 }

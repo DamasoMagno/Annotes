@@ -5,18 +5,24 @@ export const Trigger = styled(Select.Trigger)`
   background-color: transparent;
   border: 0;
   outline: 0;
+  border-radius: 8px;
+  padding: 0 1rem;
+  height: 3rem;
   cursor: pointer;
+  background-color: ${(props) => props.theme.colors['--zinc-950']};
   color: ${(props) => props.theme.colors['--gray-300']};
+  font-size: 1rem;
+
   display: flex;
   align-items: center;
   gap: 1rem;
-  font-size: 0.875rem;
 `
 
 export const Content = styled(Select.Content)`
   position: absolute;
   top: 0;
   left: 25%;
+  width: 250px;
   border-radius: 6px;
   background-color: white;
 `

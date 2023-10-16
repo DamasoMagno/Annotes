@@ -19,7 +19,7 @@ export const Container = styled.div`
     gap: 2px;
     border: 1px solid transparent;
     border-radius: 8px;
-    padding-right: 0.5rem;
+    padding-right: 1rem;
     color: ${(props) => props.theme.colors['--gray-300']};
 
     input {

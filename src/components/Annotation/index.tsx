@@ -34,6 +34,7 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
               <button>
                 <ArrowCounterClockwise />
               </button>
+
               <button>
                 <TrashSimple />
               </button>

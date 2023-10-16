@@ -1,41 +1,62 @@
-import { BellSimple, List, ShareNetwork } from 'phosphor-react'
+import { BellSimple, CaretLeft, List, Plus, ShareNetwork } from 'phosphor-react'
+import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './Avatar'
-import { HeaderContainer } from './styles'
-import { Link } from 'react-router-dom'
+
+import { HeaderContainer, Actions } from './styles'
 
 interface HeaderProps {
   onOpenSideBar(): void
-  configs: {
-    title: string
-    icon: JSX.Element
-    url: string
-  }
 }
 
-export function Header({ configs, onOpenSideBar }: HeaderProps) {
+export function Header({ onOpenSideBar }: HeaderProps) {
+  const { pathname } = useLocation()
+
+  const header = {
+    '/': {
+      title: 'Nova anotação',
+      icon: <Plus />,
+      url: '/annote',
+    },
+    '/trash': {
+      title: 'inicio',
+      icon: <CaretLeft />,
+      url: '/',
+    },
+    '/annote': {
+      title: 'anotações',
+      icon: <CaretLeft />,
+      url: '/',
+    },
+  }
+
+  const { icon, title, url } = header[pathname as keyof typeof header]
+
   return (
     <HeaderContainer>
-      <Link to={configs.url}>
-        {configs.icon}
-        {configs.title}
+      <Link to={url}>
+        {icon} <span>{title}</span>
       </Link>
 
-      <div className="actions">
-        {configs.url.includes('/annote') && (
-          <button>
-            <ShareNetwork />
+      <div className="options">
+        <Actions>
+          {pathname.includes('/annote') && (
+            <button>
+              <span>compartilhar</span>
+              <ShareNetwork />
+            </button>
+          )}
+
+          <button className="notification">
+            <BellSimple />
+            <div />
           </button>
-        )}
 
-        <button className="notification">
-          <BellSimple />
-          <div />
-        </button>
+          <button onClick={onOpenSideBar} className="menu">
+            <List />
+          </button>
+        </Actions>
 
-        <button onClick={onOpenSideBar} className="menu">
-          <List />
-        </button>
         <Avatar src="https://github.com/DamasoMagno.png" />
       </div>
     </HeaderContainer>
