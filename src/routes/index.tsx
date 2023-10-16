@@ -6,12 +6,14 @@ import { SignIn } from '../pages/SignIn'
 import { SignUp } from '../pages/SignUp'
 import { Annotations } from '../pages/Annotations'
 import { Trash } from '../pages/Trash'
+import { Annote } from '../pages/Annotation'
 
 export function Router() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />}>
         <Route path="" element={<Annotations />} />
+        <Route path="/annote/:annoteId" element={<Annote />} />
         <Route path="trash" element={<Trash />} />
       </Route>
 

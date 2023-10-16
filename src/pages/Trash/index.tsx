@@ -6,21 +6,23 @@ import { AnnotationList, TrashAlert, Container } from './styles'
 
 export function Trash() {
   return (
-    <Container>
-      <TrashAlert>
-        <div className="message">
-          <div>
-            <TrashSimple />
+    <>
+      <Container>
+        <TrashAlert>
+          <div className="message">
+            <div>
+              <TrashSimple />
+            </div>
+            Suas anotações serão removidas em até 7 dias
           </div>
-          Suas anotações serão removidas em até 7 dias
-        </div>
 
-        <button>excluir anotações</button>
-      </TrashAlert>
+          <button>excluir anotações</button>
+        </TrashAlert>
 
-      <AnnotationList>
-        <Annotation type="trashed" to="/" />
-      </AnnotationList>
-    </Container>
+        <AnnotationList>
+          <Annotation type="trashed" to="/" />
+        </AnnotationList>
+      </Container>
+    </>
   )
 }

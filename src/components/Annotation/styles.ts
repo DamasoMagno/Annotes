@@ -16,6 +16,18 @@ export const Container = styled.div`
       color: ${(props) => props.theme.colors['--gray-400']};
     }
 
+    button {
+      border: 0;
+      background-color: transparent;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     .tags {
       display: flex;
       align-items: center;
@@ -31,18 +43,6 @@ export const Container = styled.div`
       align-items: center;
       justify-content: center;
       gap: 1rem;
-
-      button {
-        border: 0;
-        background-color: transparent;
-        color: white;
-        font-size: 1rem;
-        cursor: pointer;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
     }
   }
 `
