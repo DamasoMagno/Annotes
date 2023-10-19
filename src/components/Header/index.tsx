@@ -4,6 +4,8 @@ import { Link, useLocation } from 'react-router-dom'
 import { Avatar } from './Avatar'
 
 import { HeaderContainer, Actions } from './styles'
+import { Popover } from './Share'
+import { Notification } from './Notification'
 
 interface HeaderProps {
   onOpenSideBar(): void
@@ -41,16 +43,20 @@ export function Header({ onOpenSideBar }: HeaderProps) {
       <div className="options">
         <Actions>
           {pathname.includes('/annote') && (
-            <button>
-              <span>compartilhar</span>
-              <ShareNetwork />
-            </button>
+            <Popover>
+              <button>
+                <span>compartilhar</span>
+                <ShareNetwork />
+              </button>
+            </Popover>
           )}
 
-          <button className="notification">
-            <BellSimple />
-            <div />
-          </button>
+          <Notification>
+            <button className="notification">
+              <BellSimple />
+              <div />
+            </button>
+          </Notification>
 
           <button onClick={onOpenSideBar} className="menu">
             <List />

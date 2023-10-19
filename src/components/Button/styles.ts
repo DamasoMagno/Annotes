@@ -13,6 +13,8 @@ export const ButtonContainer = styled.button<ButtonProps>`
   cursor: pointer;
   font-size: 1rem;
   transition: filter 0.25s;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  border: 0;
 
   display: flex;
   align-items: center;
@@ -37,8 +39,6 @@ export const ButtonContainer = styled.button<ButtonProps>`
       case 'ghost':
         return css`
           background-color: transparent;
-          border: 0;
-          color: #ffff;
           transition: background 0.25s;
 
           &:hover {
@@ -47,8 +47,6 @@ export const ButtonContainer = styled.button<ButtonProps>`
         `
       default:
         return css`
-          color: white;
-          border: 0;
           background-color: #005b41;
         `
     }
