@@ -18,7 +18,9 @@ export const SelectTag = styled.button<SelectTagProps>`
   color: ${(props) => props.theme.colors['--gray-300']};
   cursor: pointer;
   background-color: ${(props) =>
-    props.type === 'default' && props.theme.colors['--zinc-950']};
+    props.type === 'default'
+      ? props.theme.colors['--zinc-950']
+      : 'transparent'};
 
   svg {
     font-size: 1rem;
@@ -33,11 +35,13 @@ export const SelectTag = styled.button<SelectTagProps>`
 
 export const Tags = styled(Multiselect)`
   position: absolute;
+  z-index: 999999999;
   left: 0;
   display: none;
-  bottom: -2px;
+  bottom: -10px;
   transform: translateY(100%);
   width: 100%;
+  min-width: 200px;
   background: #18181b;
   border: 0;
   outline: 0;
@@ -49,7 +53,7 @@ export const Tags = styled(Multiselect)`
 
   .searchWrapper {
     border: 1px solid transparent;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     display: flex;
 
     input {

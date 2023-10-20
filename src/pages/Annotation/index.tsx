@@ -1,10 +1,10 @@
 import * as Toolbar from '@radix-ui/react-toolbar'
 import { EditorContent, useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Tag, TextBolder, TextItalic } from 'phosphor-react'
+import { TextBolder, TextItalic } from 'phosphor-react'
 
 import { Container, ToolbarGroup, ToolbarRoot } from './styles'
-import { Button } from '../../components/Button'
+import { SelectTags } from '../../components/SelectTag'
 
 export function Annotation() {
   const annotation = useEditor({
@@ -17,6 +17,9 @@ export function Annotation() {
 
       <div>
         <ToolbarRoot>
+          <ToolbarGroup type="single">
+            <SelectTags type="ghost" />
+          </ToolbarGroup>
           <ToolbarGroup type="multiple" aria-label="Text Formatting">
             <Toolbar.Button
               onClick={() => annotation?.chain().focus().toggleBold().run()}
@@ -28,12 +31,6 @@ export function Annotation() {
             >
               <TextItalic />
             </Toolbar.Button>
-          </ToolbarGroup>
-          <ToolbarGroup type="single">
-            <Button variant="ghost">
-              <Tag />
-              <span>Tag</span>
-            </Button>
           </ToolbarGroup>
         </ToolbarRoot>
 

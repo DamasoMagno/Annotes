@@ -11,7 +11,6 @@ export function Annotations() {
     <Container>
       <div className="filters">
         <Input placeholder="Buscar anotações" icon={MagnifyingGlass} />
-
         <SelectTags />
       </div>
 
