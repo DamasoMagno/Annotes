@@ -1,14 +1,16 @@
 import * as Popup from '@radix-ui/react-popover'
-import { Button } from '../../Button'
-import { Share, X } from 'phosphor-react'
+import { LockOpen, Share, X } from 'phosphor-react'
 import { ReactNode } from 'react'
+
+import { Button } from '../../Button'
+
 import { Content } from './styles'
 
-interface PopoverProps {
+interface ShareAnnotationProps {
   children: ReactNode
 }
 
-export function Popover({ children }: PopoverProps) {
+export function ShareAnnotation({ children }: ShareAnnotationProps) {
   return (
     <Popup.Root>
       <Popup.Trigger asChild>{children}</Popup.Trigger>
@@ -22,7 +24,10 @@ export function Popover({ children }: PopoverProps) {
           </header>
 
           <div>
-            <Button>publico</Button>
+            <Button>
+              <LockOpen />
+              <span>publico</span>
+            </Button>
             <Button variant="ghost">
               <Share />
               <span>copiar link</span>

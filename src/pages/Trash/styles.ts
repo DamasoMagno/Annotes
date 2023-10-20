@@ -26,7 +26,7 @@ export const TrashAlert = styled.div`
   .message {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 
     svg {
       border-radius: 0.375rem;
@@ -38,6 +38,10 @@ export const TrashAlert = styled.div`
       align-items: center;
       justify-content: center;
     }
+
+    p {
+      line-height: 1.6;
+    }
   }
 
   button {
@@ -46,12 +50,17 @@ export const TrashAlert = styled.div`
     border: 0;
     color: ${(props) => props.theme.colors['--gray-300']};
     cursor: pointer;
-    background-color: #202024;
-    padding: 0.5rem 0.75rem;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.25s;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      background-color: #202024;
+    }
   }
 
   @media (max-width: 568px) {

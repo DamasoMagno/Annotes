@@ -2,10 +2,10 @@ import { BellSimple, CaretLeft, List, Plus, ShareNetwork } from 'phosphor-react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './Avatar'
+import { ShareAnnotation } from './ShareAnnotation'
+import { Notification } from './Notification'
 
 import { HeaderContainer, Actions } from './styles'
-import { Popover } from './Share'
-import { Notification } from './Notification'
 
 interface HeaderProps {
   onOpenSideBar(): void
@@ -43,12 +43,12 @@ export function Header({ onOpenSideBar }: HeaderProps) {
       <div className="options">
         <Actions>
           {pathname.includes('/annote') && (
-            <Popover>
-              <button>
+            <ShareAnnotation>
+              <button className="t">
                 <span>compartilhar</span>
                 <ShareNetwork />
               </button>
-            </Popover>
+            </ShareAnnotation>
           )}
 
           <Notification>

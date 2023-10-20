@@ -3,10 +3,10 @@ import * as Popover from '@radix-ui/react-popover'
 
 export const Content = styled(Popover.Content)`
   background-color: ${(props) => props.theme.colors['--zinc-950']};
-  border-radius: 4px;
-  margin-top: 0.5rem;
+  border-radius: 8px;
+  margin-top: 0.75rem;
   margin-right: 0.5rem;
-  width: 360px;
+  width: 22.5rem;
 
   header {
     color: ${(props) => props.theme.colors['--white']};
@@ -37,6 +37,17 @@ export const Notifications = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
+  height: 15rem;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+  }
 
   li {
     list-style: none;
@@ -49,6 +60,10 @@ export const Notifications = styled.ul`
       color: #005b41;
       text-decoration: none;
       margin-left: 0.25rem;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
 `

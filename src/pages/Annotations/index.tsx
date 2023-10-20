@@ -2,9 +2,9 @@ import { MagnifyingGlass } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
-import { SelectTag } from './components/SelectTag'
 
 import { AnnotationsList, Container } from './styles'
+import { SelectTags } from '../../components/SelectTag'
 
 export function Annotations() {
   return (
@@ -12,7 +12,7 @@ export function Annotations() {
       <div className="filters">
         <Input placeholder="Buscar anotações" icon={MagnifyingGlass} />
 
-        <SelectTag />
+        <SelectTags />
       </div>
 
       <AnnotationsList>

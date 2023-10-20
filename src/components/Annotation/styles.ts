@@ -21,7 +21,15 @@ export const Container = styled.div`
       background-color: transparent;
       color: white;
       font-size: 1rem;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 8px;
+      transition: background-color 0.25s;
       cursor: pointer;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+      }
 
       display: flex;
       align-items: center;
@@ -47,9 +55,35 @@ export const Container = styled.div`
   }
 `
 
-export const Content = styled(Link)`
+export const Default = styled(Link)`
   text-decoration: none;
 
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    strong {
+      color: ${(props) => props.theme.colors['--gray-50']};
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    span {
+      color: ${(props) => props.theme.colors['--gray-400']};
+      font-size: 0.875rem;
+    }
+  }
+
+  p {
+    color: ${(props) => props.theme.colors['--gray-300']};
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 1rem 0 2rem;
+  }
+`
+
+export const Trashed = styled.div`
   header {
     display: flex;
     justify-content: space-between;

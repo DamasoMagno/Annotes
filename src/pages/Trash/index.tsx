@@ -13,7 +13,7 @@ export function Trash() {
             <div>
               <TrashSimple />
             </div>
-            Suas anotações serão removidas em até 7 dias
+            <p>Suas anotações serão removidas em até 7 dias</p>
           </div>
 
           <button>excluir anotações</button>
