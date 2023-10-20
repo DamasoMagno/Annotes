@@ -1,4 +1,4 @@
-import { styled } from 'styled-components'
+import { css, styled } from 'styled-components'
 import Multiselect from 'multiselect-react-dropdown'
 
 interface SelectTagProps {
@@ -33,12 +33,15 @@ export const SelectTag = styled.button<SelectTagProps>`
   }
 `
 
-export const Tags = styled(Multiselect)`
+interface TagsProps {
+  position: 'left' | 'right'
+}
+
+export const Tags = styled(Multiselect)<TagsProps>`
   position: absolute;
-  z-index: 999999999;
-  left: 0;
   display: none;
   bottom: -10px;
+  z-index: 9999;
   transform: translateY(100%);
   width: 100%;
   min-width: 200px;
@@ -46,6 +49,12 @@ export const Tags = styled(Multiselect)`
   border: 0;
   outline: 0;
   border-radius: 8px;
+
+  ${(props) => {
+    return css`
+      ${props.position}: 0;
+    `
+  }}
 
   @media (min-width: 768px) {
     width: 300px;
@@ -69,12 +78,30 @@ export const Tags = styled(Multiselect)`
   .optionListContainer {
     background-color: #18181b;
     border-radius: 8px;
+    max-height: 13rem;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+    }
 
     ul {
       border: none;
 
-      .highlightOption {
+      li {
         border-radius: 8px;
+
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.15);
+        }
+      }
+
+      .highlightOption {
         background-color: rgba(255, 255, 255, 0.15);
       }
     }

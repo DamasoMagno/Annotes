@@ -7,7 +7,7 @@ interface ButtonProps {
 }
 
 export const ButtonContainer = styled.button<ButtonProps>`
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   height: 3rem;
   border-radius: 8px;
   cursor: pointer;

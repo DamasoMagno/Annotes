@@ -4,27 +4,34 @@ import { SelectTag, Tags } from './styles'
 
 interface SelectTagProps {
   type?: 'default' | 'ghost'
+  position: 'left' | 'right'
 }
 
-export function SelectTags({ type = 'default' }: SelectTagProps) {
+export function SelectTags({ type = 'default', position }: SelectTagProps) {
   const options = [
-    { name: 'Option 1️⃣', id: 1 },
-    { name: 'Option 2️⃣', id: 2 },
+    { name: 'Escola', id: 1 },
+    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 3 },
+    { name: 'Técnico', id: 4 },
+    { name: 'Técnico', id: 5 },
+    { name: 'Técnico', id: 6 },
   ]
 
   return (
-    <SelectTag type={type}>
-      <Tag />
-      <p>Tags</p>
+    <>
+      <SelectTag type={type}>
+        <Tag />
+        <p>Tags</p>
 
-      <Tags
-        placeholder="Buscar tags"
-        options={options}
-        displayValue="name"
-        showCheckbox
-        hidePlaceholder
-        hideSelectedList
-      />
-    </SelectTag>
+        <Tags
+          position={position}
+          placeholder="Buscar tags"
+          options={options}
+          displayValue="name"
+          showCheckbox
+          hideSelectedList
+        />
+      </SelectTag>
+    </>
   )
 }

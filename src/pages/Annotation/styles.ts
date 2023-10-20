@@ -53,7 +53,7 @@ export const ToolbarGroup = styled(Toolbar.ToggleGroup)`
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    padding: 0.5rem 0.5rem;
+    padding: 0.5rem 1rem;
     border-radius: 8px;
     transform: background 0.25s;
 
