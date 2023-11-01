@@ -5,6 +5,7 @@ export const HeaderContainer = styled.header`
   top: 4px;
   right: 24px;
   left: 0;
+  width: 100%;
   padding: 0.5rem 1rem;
 
   display: flex;
@@ -12,6 +13,7 @@ export const HeaderContainer = styled.header`
   justify-content: space-between;
 
   @media (min-width: 1024px) {
+    width: auto;
     margin-left: 320px;
   }
 
@@ -29,7 +31,7 @@ export const HeaderContainer = styled.header`
   .options {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 `
 

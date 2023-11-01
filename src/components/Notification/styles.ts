@@ -45,7 +45,7 @@ export const Notifications = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 0.125rem;
-  height: 15rem;
+  max-height: 15rem;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {

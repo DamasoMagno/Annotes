@@ -25,12 +25,20 @@ export const Content = styled(Popover.Content)`
     button {
       background-color: transparent;
       border: 0;
-      color: white;
+      border-radius: 4px;
+      width: 2rem;
+      height: 2rem;
+      color: ${(props) => props.theme.colors['--white']};
       cursor: pointer;
+      transition: background-color 0.25s;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 

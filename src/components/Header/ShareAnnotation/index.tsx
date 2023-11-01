@@ -18,8 +18,10 @@ export function ShareAnnotation({ children }: ShareAnnotationProps) {
         <Content>
           <header>
             <h3>Compartilhar</h3>
-            <Popup.Close>
-              <X />
+            <Popup.Close asChild>
+              <button>
+                <X />
+              </button>
             </Popup.Close>
           </header>
 

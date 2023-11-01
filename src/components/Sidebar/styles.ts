@@ -13,7 +13,7 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   height: 100vh;
   width: 100%;
 
-  z-index: 1;
+  z-index: 2;
   position: fixed;
 
   @media (min-width: 1024px) {

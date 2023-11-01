@@ -6,6 +6,7 @@ import { SelectTags } from '../../components/SelectTag'
 import { Button } from '../../components/Button'
 
 import { Container, ToolbarGroup, ToolbarRoot } from './styles'
+import { CreateTag } from './CreateTag'
 
 export function Annotation() {
   const annotation = useEditor({
@@ -31,9 +32,11 @@ export function Annotation() {
             </Button>
           </ToolbarGroup>
           <ToolbarGroup type="single">
-            <Button variant="ghost" title="Nova tag">
-              <Plus />
-            </Button>
+            <CreateTag>
+              <Button variant="ghost" title="Nova tag">
+                <Plus />
+              </Button>
+            </CreateTag>
             <SelectTags variant="ghost" position="right" />
           </ToolbarGroup>
         </ToolbarRoot>
