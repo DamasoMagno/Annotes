@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './Avatar'
 import { ShareAnnotation } from './ShareAnnotation'
-import { Notification } from './Notification'
+import { Notification } from '../Notification'
 
 import { HeaderContainer, Actions } from './styles'
 

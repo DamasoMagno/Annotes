@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
   padding: 0 1rem;
 
   display: flex;
@@ -13,6 +13,7 @@ export const Container = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: row;
+    gap: 8rem;
   }
 `
 
@@ -39,7 +40,7 @@ export const Form = styled.main`
   border-radius: 10px;
   width: 100%;
   max-width: 25rem;
-  padding: 6rem 4rem;
+  padding: 3rem;
 
   display: flex;
   flex-direction: column;
@@ -48,10 +49,11 @@ export const Form = styled.main`
   form {
     display: flex;
     flex-direction: column;
+
     gap: 1rem;
 
     button {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
     }
   }
 `

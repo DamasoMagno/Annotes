@@ -5,7 +5,6 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
-  height: 3rem;
 
   label {
     color: ${(props) => props.theme.colors['--gray-300']};

@@ -34,7 +34,7 @@ export function Annotation() {
             <Button variant="ghost" title="Nova tag">
               <Plus />
             </Button>
-            <SelectTags type="ghost" position="right" />
+            <SelectTags variant="ghost" position="right" />
           </ToolbarGroup>
         </ToolbarRoot>
 

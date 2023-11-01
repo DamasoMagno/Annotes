@@ -21,7 +21,7 @@ export function SignUp() {
     resolver: zodResolver(userSchema),
   })
 
-  const handleLoginUser = (user: User) => {
+  const handleRegisterUser = (user: User) => {
     console.log(user)
 
     return ''
@@ -35,7 +35,7 @@ export function SignUp() {
       </Description>
 
       <Form>
-        <form onSubmit={handleSubmit(handleLoginUser)}>
+        <form onSubmit={handleSubmit(handleRegisterUser)}>
           <Input label="Nome" {...register('name')} />
           <Input label="Email" {...register('email')} />
           <Input label="Senha" {...register('password')} />

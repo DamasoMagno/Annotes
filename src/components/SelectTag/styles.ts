@@ -14,15 +14,17 @@ interface TagsProps {
 export const Container = styled.div`
   position: relative;
 
-  &:focus-within div {
-    display: block;
+  &:focus-within {
+    div {
+      display: block;
+    }
   }
 `
 
 export const SelectTag = styled.button<SelectTagProps>`
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.5rem;
 
   border: 0;
   border-radius: 8px;
@@ -91,16 +93,20 @@ export const Tags = styled(Multiselect)<TagsProps>`
     overflow-y: scroll;
 
     &::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.15);
-      border-radius: 10px;
+      width: 0px;
     }
 
     ul {
       border: none;
+
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 10px;
+      }
 
       li {
         border-radius: 8px;

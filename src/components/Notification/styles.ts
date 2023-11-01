@@ -23,12 +23,20 @@ export const Content = styled(Popover.Content)`
     button {
       background-color: transparent;
       border: 0;
+      border-radius: 4px;
+      width: 2rem;
+      height: 2rem;
       color: ${(props) => props.theme.colors['--white']};
       cursor: pointer;
+      transition: background-color 0.25s;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
     }
   }
 `
@@ -51,6 +59,7 @@ export const Notifications = styled.ul`
 
   li {
     list-style: none;
+    width: 100%;
     color: white;
     font-size: 1rem;
     padding: 1.5rem;

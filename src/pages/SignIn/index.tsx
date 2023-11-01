@@ -1,12 +1,32 @@
 import { GoogleLogo } from 'phosphor-react'
 import { Link } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { z } from 'zod'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form, Message } from './styles'
 
+const userSchema = z.object({
+  email: z.string().email(),
+  password: z.string().min(6),
+})
+
+type User = z.infer<typeof userSchema>
+
 export function SignIn() {
+  const { register, handleSubmit } = useForm<User>({
+    resolver: zodResolver(userSchema),
+  })
+
+  const handleLoginUser = (user: User) => {
+    console.log(user)
+
+    return ''
+  }
+
   return (
     <Container>
       <Description>
@@ -15,9 +35,9 @@ export function SignIn() {
       </Description>
 
       <Form>
-        <form>
-          <Input label="Email" />
-          <Input label="Senha" />
+        <form onSubmit={handleSubmit(handleLoginUser)}>
+          <Input label="Email" {...register('email')} />
+          <Input label="Senha" {...register('password')} />
           <Button>Fazer login</Button>
         </form>
 

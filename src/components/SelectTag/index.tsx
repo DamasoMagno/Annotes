@@ -3,19 +3,24 @@ import { Tag } from 'phosphor-react'
 import { Container, SelectTagVariants, Tags, SelectTag } from './styles'
 
 interface SelectTagProps {
-  variants?: SelectTagVariants
+  variant?: SelectTagVariants
   position: 'left' | 'right'
 }
 
-export function SelectTags({ variants, position }: SelectTagProps) {
+export function SelectTags({ variant, position }: SelectTagProps) {
   const options = [
     { name: 'Escola', id: 1 },
+    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 2 },
     { name: 'Técnico', id: 2 },
   ]
 
   return (
     <Container>
-      <SelectTag variant={variants}>
+      <SelectTag variant={variant}>
         <Tag />
         <span>Tags</span>
       </SelectTag>
