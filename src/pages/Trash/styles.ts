@@ -45,22 +45,16 @@ export const TrashAlert = styled.div`
   }
 
   button {
-    background-color: transparent;
     border-radius: 8px;
     border: 0;
     color: ${(props) => props.theme.colors['--gray-300']};
     cursor: pointer;
-    background-color: transparent;
+    background-color: #202024;
     padding: 0.5rem 1rem;
-    transition: background-color 0.25s;
 
     display: flex;
     align-items: center;
     justify-content: center;
-
-    &:hover {
-      background-color: #202024;
-    }
   }
 
   @media (max-width: 568px) {

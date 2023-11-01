@@ -24,21 +24,7 @@ export const Container = styled.div`
 
 export const AnnotationsList = styled.div`
   margin-top: 3rem;
-
-  .select {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
-    color: white;
-    width: 100%;
-  }
-
-  .annotations {
-    margin-top: 1rem;
-
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `

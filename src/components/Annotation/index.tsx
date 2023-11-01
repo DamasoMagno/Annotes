@@ -1,20 +1,20 @@
-import { ComponentProps, ForwardRefExoticComponent } from "react";
-import { ArrowCounterClockwise, TrashSimple } from "phosphor-react";
-import { LinkProps } from "react-router-dom";
+import { ComponentProps, ForwardRefExoticComponent } from 'react'
+import { ArrowCounterClockwise, TrashSimple } from 'phosphor-react'
+import { LinkProps } from 'react-router-dom'
 
-import { Container, Default, Trashed } from "./styles";
+import { Container, Default, Trashed } from './styles'
 
-export type AnnotationType = "default" | "trashed";
+export type AnnotationType = 'default' | 'trashed'
 
 interface AnnotationProps
   extends ComponentProps<ForwardRefExoticComponent<LinkProps>> {
-  type?: AnnotationType;
+  type?: AnnotationType
 }
 
-export function Annotation({ type = "default", ...props }: AnnotationProps) {
+export function Annotation({ type = 'default', ...props }: AnnotationProps) {
   return (
     <Container>
-      {type === "default" ? (
+      {type === 'default' ? (
         <Default {...props}>
           <header>
             <strong>Lorem ipsum</strong>
@@ -40,7 +40,7 @@ export function Annotation({ type = "default", ...props }: AnnotationProps) {
       )}
 
       <footer>
-        {type === "trashed" ? (
+        {type === 'trashed' ? (
           <>
             <span>Remoção em 3 dias</span>
 
@@ -67,5 +67,5 @@ export function Annotation({ type = "default", ...props }: AnnotationProps) {
         )}
       </footer>
     </Container>
-  );
+  )
 }

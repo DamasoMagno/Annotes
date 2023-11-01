@@ -11,11 +11,11 @@ export function SelectTags({ variant, position }: SelectTagProps) {
   const options = [
     { name: 'Escola', id: 1 },
     { name: 'Técnico', id: 2 },
-    { name: 'Técnico', id: 2 },
-    { name: 'Técnico', id: 2 },
-    { name: 'Técnico', id: 2 },
-    { name: 'Técnico', id: 2 },
-    { name: 'Técnico', id: 2 },
+    { name: 'Técnico', id: 3 },
+    { name: 'Técnico', id: 4 },
+    { name: 'Técnico', id: 5 },
+    { name: 'Técnico', id: 6 },
+    { name: 'Técnico', id: 7 },
   ]
 
   return (

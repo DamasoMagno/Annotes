@@ -50,7 +50,7 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 1rem;
+      gap: 0.5rem;
     }
   }
 `
@@ -79,7 +79,7 @@ export const Default = styled(Link)`
     color: ${(props) => props.theme.colors['--gray-300']};
     line-height: 1.6;
     font-size: 1rem;
-    margin: 1rem 0 2rem;
+    margin: 0.75rem 0 1.5rem;
   }
 `
 

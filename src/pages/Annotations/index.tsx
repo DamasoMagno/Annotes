@@ -2,9 +2,9 @@ import { MagnifyingGlass } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
+import { SelectTags } from '../../components/SelectTag'
 
 import { AnnotationsList, Container } from './styles'
-import { SelectTags } from '../../components/SelectTag'
 
 export function Annotations() {
   return (
@@ -15,9 +15,7 @@ export function Annotations() {
       </div>
 
       <AnnotationsList>
-        <div className="annotations">
-          <Annotation to="/annote" />
-        </div>
+        <Annotation to="/annote" />
       </AnnotationsList>
     </Container>
   )

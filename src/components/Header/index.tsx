@@ -44,7 +44,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
         <Actions>
           {pathname.includes('/annote') && (
             <ShareAnnotation>
-              <button className="t">
+              <button title="Compartilhar">
                 <span>compartilhar</span>
                 <ShareNetwork />
               </button>
@@ -52,7 +52,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
           )}
 
           <Notification>
-            <button className="notification">
+            <button className="notification" title="Notificações">
               <BellSimple />
               <div />
             </button>

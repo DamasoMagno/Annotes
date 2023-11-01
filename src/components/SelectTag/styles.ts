@@ -76,7 +76,7 @@ export const Tags = styled(Multiselect)<TagsProps>`
   }
 
   .searchWrapper {
-    border: 1px solid transparent;
+    border: 0;
     padding: 0.5rem 1rem;
     display: flex;
 
@@ -91,6 +91,7 @@ export const Tags = styled(Multiselect)<TagsProps>`
     background-color: #18181b;
     max-height: 13rem;
     overflow-y: scroll;
+    border-radius: 0;
 
     &::-webkit-scrollbar {
       width: 0px;
