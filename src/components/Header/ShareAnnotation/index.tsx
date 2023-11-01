@@ -1,6 +1,6 @@
+import { ReactNode } from 'react'
 import * as Popup from '@radix-ui/react-popover'
 import { LockOpen, Share, X } from 'phosphor-react'
-import { ReactNode } from 'react'
 
 import { Button } from '../../Button'
 

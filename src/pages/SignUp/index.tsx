@@ -6,8 +6,7 @@ import { Link } from 'react-router-dom'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
-import { Container, Description, Form } from './styles'
-import { Message } from '../SignIn/styles'
+import { Container, Description, Form, SignInMessge } from './styles'
 
 const userSchema = z.object({
   name: z.string(),
@@ -24,6 +23,8 @@ export function SignUp() {
 
   const handleLoginUser = (user: User) => {
     console.log(user)
+
+    return ''
   }
 
   return (
@@ -41,10 +42,10 @@ export function SignUp() {
           <Button>Criar conta</Button>
         </form>
 
-        <Message className="login">
+        <SignInMessge className="login">
           Já tem conta?
           <Link to="/login">Entrar</Link>
-        </Message>
+        </SignInMessge>
       </Form>
     </Container>
   )

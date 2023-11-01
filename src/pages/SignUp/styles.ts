@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Message } from '../SignIn/styles'
 
 export const Container = styled.div`
   height: 100vh;
@@ -55,3 +56,5 @@ export const Form = styled.main`
     }
   }
 `
+
+export const SignInMessge = styled(Message)``

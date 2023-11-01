@@ -1,47 +1,59 @@
 import { css, styled } from 'styled-components'
 import Multiselect from 'multiselect-react-dropdown'
 
+export type SelectTagVariants = 'ghost'
+
 interface SelectTagProps {
-  type: 'default' | 'ghost'
+  variant?: SelectTagVariants
 }
 
-export const SelectTag = styled.button<SelectTagProps>`
+interface TagsProps {
+  position: 'left' | 'right'
+}
+
+export const Container = styled.div`
   position: relative;
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-
-  border: 0;
-  border-radius: 8px;
-  height: 3rem;
-  padding: 1rem;
-  color: ${(props) => props.theme.colors['--gray-300']};
-  cursor: pointer;
-  background-color: ${(props) =>
-    props.type === 'default'
-      ? props.theme.colors['--zinc-950']
-      : 'transparent'};
-
-  svg {
-    font-size: 1rem;
-    min-width: 1rem;
-    min-height: 1rem;
-  }
 
   &:focus-within div {
     display: block;
   }
 `
 
-interface TagsProps {
-  position: 'left' | 'right'
-}
+export const SelectTag = styled.button<SelectTagProps>`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  padding: 0 1.5rem;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  cursor: pointer;
+
+  ${(props) => {
+    switch (props.variant) {
+      case 'ghost':
+        return css`
+          background-color: transparent;
+        `
+      default:
+        return css`
+          background-color: ${(props) => props.theme.colors['--zinc-950']};
+        `
+    }
+  }}
+
+  svg {
+    font-size: 1rem;
+  }
+`
 
 export const Tags = styled(Multiselect)<TagsProps>`
   position: absolute;
   display: none;
-  bottom: -10px;
-  z-index: 9999;
+  bottom: -5px;
   transform: translateY(100%);
   width: 100%;
   min-width: 200px;
@@ -49,6 +61,7 @@ export const Tags = styled(Multiselect)<TagsProps>`
   border: 0;
   outline: 0;
   border-radius: 8px;
+  height: 100%;
 
   ${(props) => {
     return css`
@@ -68,16 +81,12 @@ export const Tags = styled(Multiselect)<TagsProps>`
     input {
       color: ${(props) => props.theme.colors['--gray-300']};
       width: 100%;
-    }
-
-    button {
-      border: 1px solid red;
+      flex: 1;
     }
   }
 
   .optionListContainer {
     background-color: #18181b;
-    border-radius: 8px;
     max-height: 13rem;
     overflow-y: scroll;
 
@@ -95,13 +104,11 @@ export const Tags = styled(Multiselect)<TagsProps>`
 
       li {
         border-radius: 8px;
-
-        &:hover {
-          background-color: rgba(255, 255, 255, 0.15);
-        }
+        color: ${(props) => props.theme.colors['--gray-300']};
       }
 
-      .highlightOption {
+      .highlightOption,
+      li:hover {
         background-color: rgba(255, 255, 255, 0.15);
       }
     }
