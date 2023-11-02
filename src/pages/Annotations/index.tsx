@@ -2,7 +2,7 @@ import { MagnifyingGlass } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
-import { SelectTags } from '../../components/SelectTag'
+import { SelectTags } from '../../components/SelectTags'
 
 import { AnnotationsList, Container } from './styles'
 

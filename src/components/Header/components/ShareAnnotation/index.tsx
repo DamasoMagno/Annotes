@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 import * as Popup from '@radix-ui/react-popover'
 import { LockOpen, Share, X } from 'phosphor-react'
 
-import { Button } from '../../Button'
+import { Button } from '../../../Button'
 
 import { Content } from './styles'
 
@@ -18,6 +18,7 @@ export function ShareAnnotation({ children }: ShareAnnotationProps) {
         <Content>
           <header>
             <h3>Compartilhar</h3>
+
             <Popup.Close asChild>
               <button>
                 <X />

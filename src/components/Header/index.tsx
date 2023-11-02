@@ -1,9 +1,9 @@
 import { BellSimple, CaretLeft, List, Plus, ShareNetwork } from 'phosphor-react'
 import { Link, useLocation } from 'react-router-dom'
 
-import { Avatar } from './Avatar'
-import { ShareAnnotation } from './ShareAnnotation'
-import { Notification } from '../Notification'
+import { Avatar } from './components/Avatar'
+import { ShareAnnotation } from './components/ShareAnnotation'
+import { Notification } from './components/Notification'
 
 import { HeaderContainer, Actions } from './styles'
 

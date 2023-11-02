@@ -1,48 +1,31 @@
-import { EditorContent, useEditor } from '@tiptap/react'
+import Placeholder from '@tiptap/extension-placeholder'
+import { useEditor } from '@tiptap/react'
 import StarterKit from '@tiptap/starter-kit'
-import { Plus, TextBolder, TextItalic } from 'phosphor-react'
 
-import { SelectTags } from '../../components/SelectTag'
-import { Button } from '../../components/Button'
-
-import { Container, ToolbarGroup, ToolbarRoot } from './styles'
-import { CreateTag } from './CreateTag'
+import { Container } from './styles'
+import { Editor } from './components/Editor'
 
 export function Annotation() {
   const annotation = useEditor({
-    extensions: [StarterKit],
+    extensions: [
+      StarterKit,
+      Placeholder.configure({
+        placeholder: ({ node }) => {
+          if (node.type.name === 'heading') {
+            return 'Escreva seu titulo'
+          }
+
+          return 'Escreva algo'
+        },
+      }),
+    ],
   })
 
   return (
     <Container>
-      <textarea placeholder="Insira um conteúdo" />
+      <textarea placeholder="Insira um título" />
 
-      <div>
-        <ToolbarRoot>
-          <ToolbarGroup type="multiple" aria-label="Text Formatting">
-            <Button
-              onClick={() => annotation?.chain().focus().toggleBold().run()}
-            >
-              <TextBolder />
-            </Button>
-            <Button
-              onClick={() => annotation?.chain().focus().toggleItalic().run()}
-            >
-              <TextItalic />
-            </Button>
-          </ToolbarGroup>
-          <ToolbarGroup type="single">
-            <CreateTag>
-              <Button variant="ghost" title="Nova tag">
-                <Plus />
-              </Button>
-            </CreateTag>
-            <SelectTags variant="ghost" position="right" />
-          </ToolbarGroup>
-        </ToolbarRoot>
-
-        <EditorContent editor={annotation} value="Awddwa" className="text" />
-      </div>
+      <Editor annotation={annotation} />
     </Container>
   )
 }

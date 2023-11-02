@@ -10,7 +10,7 @@ export const Content = styled(Popover.Content)`
 
   header {
     color: ${(props) => props.theme.colors['--white']};
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     font-weight: 600;
     padding: 0.75rem 1.5rem;
     display: flex;
@@ -61,7 +61,7 @@ export const Notifications = styled.ul`
     list-style: none;
     width: 100%;
     color: white;
-    font-size: 1rem;
+    font-size: 0.875rem;
     padding: 1.5rem;
     background: rgba(38, 38, 38, 0.5);
 

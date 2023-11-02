@@ -14,7 +14,7 @@ export const Content = styled(Popover.Content)`
 
   header {
     color: ${(props) => props.theme.colors['--white']};
-    font-size: 1.25rem;
+    font-size: 1.125rem;
     padding: 1.5rem 1.5rem 0.5rem;
     font-weight: 600;
 

@@ -28,6 +28,10 @@ export const ButtonContainer = styled.button<ButtonProps>`
     flex: 1;
   }
 
+  &.active {
+    background: rgba(255, 255, 255, 0.07);
+  }
+
   ${(props) => {
     switch (props.variant) {
       case 'outline':

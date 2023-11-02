@@ -1,16 +1,13 @@
-import { ReactNode, useState, MouseEvent } from 'react'
+import { useState, MouseEvent } from 'react'
 import * as Modal from '@radix-ui/react-alert-dialog'
-import { X } from 'phosphor-react'
+import { Plus, X } from 'phosphor-react'
 
-import { Input } from '../../../components/Input'
+import { Input } from '../../../../components/Input'
+import { Button } from '../../../../components/Button'
 
 import { Content, Overlay } from './styles'
 
-interface CreatTagProps {
-  children?: ReactNode
-}
-
-export function CreateTag({ children }: CreatTagProps) {
+export function CreateTag() {
   const [tag, setTag] = useState('')
   const [tags, setTags] = useState(['Escolar'])
 
@@ -31,7 +28,11 @@ export function CreateTag({ children }: CreatTagProps) {
 
   return (
     <Modal.Root>
-      <Modal.Trigger asChild>{children}</Modal.Trigger>
+      <Modal.Trigger asChild>
+        <Button variant="ghost" title="Nova tag">
+          <Plus />
+        </Button>
+      </Modal.Trigger>
 
       <Modal.Portal>
         <Overlay />

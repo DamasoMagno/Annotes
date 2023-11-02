@@ -1,8 +1,9 @@
-import * as Popup from '@radix-ui/react-popover'
 import { ReactNode } from 'react'
+import * as Popup from '@radix-ui/react-popover'
 import { Link } from 'react-router-dom'
-import { Content, Notifications } from './styles'
 import { X } from 'phosphor-react'
+
+import { Content, Notifications } from './styles'
 
 interface Notification {
   children: ReactNode
