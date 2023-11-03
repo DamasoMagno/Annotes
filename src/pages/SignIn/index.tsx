@@ -1,5 +1,5 @@
 import { GoogleLogo } from 'phosphor-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
@@ -17,6 +17,8 @@ const userSchema = z.object({
 type User = z.infer<typeof userSchema>
 
 export function SignIn() {
+  const navigate = useNavigate()
+
   const { register, handleSubmit } = useForm<User>({
     resolver: zodResolver(userSchema),
   })
@@ -24,7 +26,7 @@ export function SignIn() {
   const handleLoginUser = (user: User) => {
     console.log(user)
 
-    return ''
+    navigate('/')
   }
 
   return (
@@ -36,8 +38,8 @@ export function SignIn() {
 
       <Form>
         <form onSubmit={handleSubmit(handleLoginUser)}>
-          <Input label="Email" {...register('email')} />
-          <Input label="Senha" {...register('password')} />
+          <Input label="Email" {...register('email')} type="email" />
+          <Input label="Senha" {...register('password')} type="password" />
           <Button>Fazer login</Button>
         </form>
 

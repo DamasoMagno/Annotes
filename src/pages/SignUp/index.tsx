@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
@@ -17,6 +17,8 @@ const userSchema = z.object({
 type User = z.infer<typeof userSchema>
 
 export function SignUp() {
+  const navigate = useNavigate()
+
   const { register, handleSubmit } = useForm<User>({
     resolver: zodResolver(userSchema),
   })
@@ -24,7 +26,7 @@ export function SignUp() {
   const handleRegisterUser = (user: User) => {
     console.log(user)
 
-    return ''
+    navigate('/login')
   }
 
   return (
@@ -37,8 +39,8 @@ export function SignUp() {
       <Form>
         <form onSubmit={handleSubmit(handleRegisterUser)}>
           <Input label="Nome" {...register('name')} />
-          <Input label="Email" {...register('email')} />
-          <Input label="Senha" {...register('password')} />
+          <Input label="Email" {...register('email')} type="email" />
+          <Input label="Senha" {...register('password')} type="password" />
           <Button>Criar conta</Button>
         </form>
 

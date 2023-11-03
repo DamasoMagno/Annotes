@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { Note, SignOut, TrashSimple, X } from 'phosphor-react'
 
 import { Button } from '../Button'
@@ -11,6 +11,12 @@ interface SidebarProps {
 }
 
 export function Sidebar({ sidebarIsOpen, onCloseSidebar }: SidebarProps) {
+  const navigate = useNavigate()
+
+  const logout = () => {
+    navigate('/login')
+  }
+
   return (
     <SidebarContainer open={sidebarIsOpen}>
       <header>
@@ -30,7 +36,7 @@ export function Sidebar({ sidebarIsOpen, onCloseSidebar }: SidebarProps) {
         </NavLink>
       </nav>
 
-      <Button variant="ghost">
+      <Button variant="ghost" onClick={logout}>
         <SignOut />
         <span>Sair</span>
       </Button>

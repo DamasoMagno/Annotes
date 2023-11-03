@@ -4,7 +4,7 @@ export const Container = styled.div`
   margin-top: 1.5rem;
 
   .editor {
-    margin-top: 1rem;
+    margin-top: 2rem;
 
     .tiptap {
       color: white;

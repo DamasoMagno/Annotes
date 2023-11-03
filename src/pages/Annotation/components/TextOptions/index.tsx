@@ -15,12 +15,14 @@ export function TextOptions({ annotation }: TextOptionsProps) {
     <ToolbarRoot>
       <Options type="multiple" aria-label="Text Formatting">
         <Button
+          variant="ghost"
           onClick={() => annotation?.chain().focus().toggleBold().run()}
           active={annotation?.isActive('bold')}
         >
           <TextBolder />
         </Button>
         <Button
+          variant="ghost"
           onClick={() => annotation?.chain().focus().toggleItalic().run()}
           active={annotation?.isActive('italic')}
         >

@@ -29,7 +29,7 @@ export function CreateTag() {
   return (
     <Modal.Root>
       <Modal.Trigger asChild>
-        <Button variant="ghost" title="Nova tag">
+        <Button variant="outline" title="Nova tag">
           <Plus />
         </Button>
       </Modal.Trigger>
