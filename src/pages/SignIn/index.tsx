@@ -3,11 +3,18 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  signInWithEmailAndPassword,
+} from 'firebase/auth'
+import { auth } from '../../services/firebase'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form, Message } from './styles'
+import { FirebaseError } from 'firebase/app'
 
 const userSchema = z.object({
   email: z.string().email(),
@@ -16,6 +23,8 @@ const userSchema = z.object({
 
 type User = z.infer<typeof userSchema>
 
+const provider = new GoogleAuthProvider()
+
 export function SignIn() {
   const navigate = useNavigate()
 
@@ -23,8 +32,20 @@ export function SignIn() {
     resolver: zodResolver(userSchema),
   })
 
-  const handleLoginUser = (user: User) => {
-    console.log(user)
+  const handleLoginUser = async (user: User) => {
+    try {
+      await signInWithEmailAndPassword(auth, user.email, user.password)
+
+      navigate('/')
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        console.log(error.message)
+      }
+    }
+  }
+
+  const handleLoginWithGoogle = async () => {
+    await signInWithPopup(auth, provider)
 
     navigate('/')
   }
@@ -48,7 +69,7 @@ export function SignIn() {
           <Link to="/signUp">Registre-se</Link>
         </Message>
 
-        <Button variant="outline">
+        <Button variant="outline" onClick={handleLoginWithGoogle}>
           <GoogleLogo />
           <span>Entrar com google</span>
         </Button>

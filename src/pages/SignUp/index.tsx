@@ -7,6 +7,9 @@ import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form, SignInMessge } from './styles'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { auth } from '../../services/firebase'
+import { FirebaseError } from 'firebase/app'
 
 const userSchema = z.object({
   name: z.string(),
@@ -23,10 +26,24 @@ export function SignUp() {
     resolver: zodResolver(userSchema),
   })
 
-  const handleRegisterUser = (user: User) => {
-    console.log(user)
+  const handleRegisterUser = async (user: User) => {
+    try {
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        user.email,
+        user.password,
+      )
 
-    navigate('/login')
+      await updateProfile(response.user, {
+        displayName: user.name,
+      })
+
+      navigate('/login')
+    } catch (error) {
+      if (error instanceof FirebaseError) {
+        console.log(error.message)
+      }
+    }
   }
 
   return (
