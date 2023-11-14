@@ -4,7 +4,7 @@ import { LockOpen, Share, X } from 'phosphor-react'
 
 import { Button } from '../../../Button'
 
-import { Content } from './styles'
+import { Actions, Content } from './styles'
 
 interface ShareAnnotationProps {
   children: ReactNode
@@ -14,6 +14,7 @@ export function ShareAnnotation({ children }: ShareAnnotationProps) {
   return (
     <Popup.Root>
       <Popup.Trigger asChild>{children}</Popup.Trigger>
+
       <Popup.Portal>
         <Content>
           <header>
@@ -26,16 +27,16 @@ export function ShareAnnotation({ children }: ShareAnnotationProps) {
             </Popup.Close>
           </header>
 
-          <div>
-            <Button>
+          <Actions>
+            <Button variant="ghost">
               <LockOpen />
               <span>publico</span>
             </Button>
-            <Button variant="ghost">
+            <Button>
               <Share />
               <span>copiar link</span>
             </Button>
-          </div>
+          </Actions>
         </Content>
       </Popup.Portal>
     </Popup.Root>

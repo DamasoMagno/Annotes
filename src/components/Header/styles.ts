@@ -51,7 +51,8 @@ export const Actions = styled.div`
     color: ${(props) => props.theme.colors['--gray-300']};
     border: 0;
     cursor: pointer;
-    height: 2rem;
+    position: relative;
+    height: 2.5rem;
     padding: 0 0.75rem;
     border-radius: 8px;
     transition: background 0.25s;
@@ -94,9 +95,9 @@ export const Actions = styled.div`
       border-radius: 100%;
       background: #ef4444;
       position: absolute;
-      right: 0;
-      bottom: 0;
-      transform: translate(-100%, -100%);
+      right: 10%;
+      top: 50%;
+      transform: translateX(-100%);
     }
   }
 `

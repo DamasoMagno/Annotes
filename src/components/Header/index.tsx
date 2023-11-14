@@ -14,35 +14,35 @@ interface HeaderProps {
 export function Header({ onOpenSideBar }: HeaderProps) {
   const { pathname } = useLocation()
 
-  const header = {
+  const pages = {
     '/': {
-      title: 'Nova anotação',
-      icon: <Plus />,
       url: '/annote',
-    },
-    '/trash': {
-      title: 'inicio',
-      icon: <CaretLeft />,
-      url: '/',
+      navigateTitle: 'Nova anotação',
+      navigateIcon: <Plus />,
     },
     '/annote': {
-      title: 'anotações',
-      icon: <CaretLeft />,
       url: '/',
+      navigateTitle: 'Anotações',
+      navigateIcon: <CaretLeft />,
     },
   }
 
-  const { icon, title, url } = header[pathname as keyof typeof header]
+  const annotesPage = pathname === '/annote'
+
+  const { url, navigateIcon, navigateTitle } = annotesPage
+    ? pages['/annote']
+    : pages['/']
 
   return (
     <HeaderContainer>
       <Link to={url}>
-        {icon} <span>{title}</span>
+        {navigateIcon}
+        <span>{navigateTitle}</span>
       </Link>
 
       <div className="options">
         <Actions>
-          {pathname.includes('/annote') && (
+          {annotesPage && (
             <ShareAnnotation>
               <button title="Compartilhar">
                 <span>compartilhar</span>

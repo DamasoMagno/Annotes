@@ -1,9 +1,9 @@
 import { TextBolder, TextItalic } from 'phosphor-react'
-import { Button } from '../../../../components/Button'
 import { Editor } from '@tiptap/react'
 
+import { Button } from '../../../../components/Button'
 import { SelectTags } from '../../../../components/SelectTags'
-import { CreateTag } from '../../components/CreateTag'
+
 import { Options, ToolbarRoot } from './styles'
 
 interface TextOptionsProps {
@@ -13,7 +13,11 @@ interface TextOptionsProps {
 export function TextOptions({ annotation }: TextOptionsProps) {
   return (
     <ToolbarRoot>
-      <Options type="multiple" aria-label="Text Formatting">
+      <Options
+        type="multiple"
+        aria-label="Text Formatting"
+        className="formatText"
+      >
         <Button
           variant="ghost"
           onClick={() => annotation?.chain().focus().toggleBold().run()}
@@ -31,8 +35,7 @@ export function TextOptions({ annotation }: TextOptionsProps) {
       </Options>
 
       <Options type="single">
-        <CreateTag />
-        <SelectTags variant="ghost" position="right" />
+        <SelectTags variant="ghost" />
       </Options>
     </ToolbarRoot>
   )

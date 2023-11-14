@@ -39,8 +39,8 @@ export const Form = styled.main`
   background-color: ${(props) => props.theme.colors['--neutral-950']};
   border-radius: 10px;
   width: 100%;
-  max-width: 25rem;
-  padding: 3rem;
+  max-width: 30rem;
+  padding: 4rem 3rem;
 
   display: flex;
   flex-direction: column;
@@ -49,27 +49,36 @@ export const Form = styled.main`
   form {
     display: flex;
     flex-direction: column;
-
     gap: 1rem;
 
-    button {
-      margin-top: 0.5rem;
+    .field {
+      color: white;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
     }
+  }
+
+  .googleSign {
+    margin-top: 1.5rem;
   }
 `
 
 export const Message = styled.div`
-  align-self: flex-end;
   color: white;
+  text-align: center;
   font-size: 0.875rem;
-  display: block;
   font-size: 0.857rem;
-  margin: 1rem 0 2.5rem;
+  margin-top: 1.5rem;
 
   a {
     margin-left: 0.255rem;
     text-decoration: none;
     font-weight: bold;
     color: #005b41;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 `

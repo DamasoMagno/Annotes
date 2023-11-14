@@ -1,11 +1,10 @@
 import { useState, MouseEvent } from 'react'
 import * as Modal from '@radix-ui/react-alert-dialog'
-import { Plus, X } from 'phosphor-react'
+import { Tag, X } from 'phosphor-react'
 
-import { Input } from '../../../../components/Input'
-import { Button } from '../../../../components/Button'
+import { Input } from '../Input'
 
-import { Content, Overlay } from './styles'
+import { Content, Overlay, SelectTag } from './styles'
 
 export function CreateTag() {
   const [tag, setTag] = useState('')
@@ -29,9 +28,10 @@ export function CreateTag() {
   return (
     <Modal.Root>
       <Modal.Trigger asChild>
-        <Button variant="outline" title="Nova tag">
-          <Plus />
-        </Button>
+        <SelectTag>
+          <span>Tags</span>
+          <Tag />
+        </SelectTag>
       </Modal.Trigger>
 
       <Modal.Portal>

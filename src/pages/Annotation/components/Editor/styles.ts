@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin-top: 1.5rem;
-
   .editor {
     margin-top: 2rem;
 

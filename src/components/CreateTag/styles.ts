@@ -1,5 +1,5 @@
 import * as Modal from '@radix-ui/react-alert-dialog'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const Overlay = styled(Modal.Overlay)`
   background-color: rgba(255, 255, 255, 0.1);
@@ -97,6 +97,49 @@ export const Content = styled(Modal.Content)`
       &:last-child {
         background-color: #005b41;
       }
+    }
+  }
+`
+
+export type SelectTagVariants = 'ghost'
+
+interface SelectTagProps {
+  variant?: SelectTagVariants
+}
+
+export const SelectTag = styled.button<SelectTagProps>`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border: 0;
+  border-radius: 8px;
+  width: 100%;
+  height: 3rem;
+  padding: 0 1.5rem;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  cursor: pointer;
+
+  ${(props) => {
+    switch (props.variant) {
+      case 'ghost':
+        return css`
+          background-color: transparent;
+        `
+      default:
+        return css`
+          background-color: ${(props) => props.theme.colors['--zinc-950']};
+        `
+    }
+  }}
+
+  svg {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 728px) {
+    span {
+      display: none;
     }
   }
 `

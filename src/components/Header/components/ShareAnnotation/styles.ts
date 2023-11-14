@@ -15,7 +15,7 @@ export const Content = styled(Popover.Content)`
   header {
     color: ${(props) => props.theme.colors['--white']};
     font-size: 1.125rem;
-    padding: 1.5rem 1.5rem 0.5rem;
+    padding: 1rem 1.5rem;
     font-weight: 600;
 
     display: flex;
@@ -41,11 +41,11 @@ export const Content = styled(Popover.Content)`
       }
     }
   }
+`
 
-  div {
-    padding: 1.5rem;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
+export const Actions = styled.div`
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 `

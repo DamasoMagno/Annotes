@@ -1,21 +1,24 @@
-import { ComponentProps, ReactNode } from 'react'
+import { ComponentProps, ReactNode, forwardRef } from 'react'
 
 import { ButtonVariants, ButtonContainer } from './styles'
 
 interface ButtonProps extends ComponentProps<'button'> {
   variant?: ButtonVariants
-  children: ReactNode
   active?: boolean
+  children: ReactNode
 }
 
-export function Button({ children, variant, active, ...props }: ButtonProps) {
-  return (
-    <ButtonContainer
-      variant={variant}
-      className={active ? 'active' : ''}
-      {...props}
-    >
-      {children}
-    </ButtonContainer>
-  )
-}
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ children, variant, active, ...props }, ref) => {
+    return (
+      <ButtonContainer
+        ref={ref}
+        variant={variant}
+        className={active ? 'active' : ''}
+        {...props}
+      >
+        {children}
+      </ButtonContainer>
+    )
+  },
+)

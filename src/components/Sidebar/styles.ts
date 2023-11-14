@@ -63,14 +63,9 @@ export const SidebarContainer = styled.aside<SidebarProps>`
       align-items: center;
       gap: 0.5rem;
 
-      &.active {
+      &.active,
+      &:hover {
         color: ${(props) => props.theme.colors['--gray-200']};
-      }
-
-      @media (max-width: 1024px) {
-        svg {
-          display: none;
-        }
       }
     }
   }

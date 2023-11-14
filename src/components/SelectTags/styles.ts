@@ -24,7 +24,7 @@ export const Container = styled.div`
 export const SelectTag = styled.button<SelectTagProps>`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: space-between;
 
   border: 0;
   border-radius: 8px;
@@ -49,6 +49,12 @@ export const SelectTag = styled.button<SelectTagProps>`
 
   svg {
     font-size: 1rem;
+  }
+
+  @media (max-width: 728px) {
+    span {
+      display: none;
+    }
   }
 `
 

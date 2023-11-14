@@ -28,8 +28,7 @@ export function Notification({ children }: Notification) {
 
           <Notifications>
             <li>
-              Teste.
-              <Link to="/trash">Acesse</Link>
+              Teste. <Link to="/trash">Acesse</Link>
             </li>
           </Notifications>
         </Content>

@@ -12,7 +12,7 @@ export const Content = styled(Popover.Content)`
     color: ${(props) => props.theme.colors['--white']};
     font-size: 1.125rem;
     font-weight: 600;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
 

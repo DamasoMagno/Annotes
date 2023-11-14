@@ -1,6 +1,6 @@
 import { GoogleLogo } from 'phosphor-react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useForm } from 'react-hook-form'
+import { useForm, Controller } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
 import {
@@ -8,13 +8,13 @@ import {
   signInWithPopup,
   signInWithEmailAndPassword,
 } from 'firebase/auth'
+import { FirebaseError } from 'firebase/app'
 import { auth } from '../../services/firebase'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form, Message } from './styles'
-import { FirebaseError } from 'firebase/app'
 
 const userSchema = z.object({
   email: z.string().email(),
@@ -28,7 +28,7 @@ const provider = new GoogleAuthProvider()
 export function SignIn() {
   const navigate = useNavigate()
 
-  const { register, handleSubmit } = useForm<User>({
+  const { control, handleSubmit } = useForm<User>({
     resolver: zodResolver(userSchema),
   })
 
@@ -59,20 +59,47 @@ export function SignIn() {
 
       <Form>
         <form onSubmit={handleSubmit(handleLoginUser)}>
-          <Input label="Email" {...register('email')} type="email" />
-          <Input label="Senha" {...register('password')} type="password" />
+          <Controller
+            name="email"
+            control={control}
+            render={(props) => {
+              return (
+                <div className="field">
+                  <label htmlFor="email">E-mail</label>
+                  <Input {...props} id="email" type="email" />
+                </div>
+              )
+            }}
+          />
+          <Controller
+            name="password"
+            control={control}
+            render={(props) => {
+              return (
+                <div className="field">
+                  <label htmlFor="password">Senha</label>
+                  <Input {...props} id="password" type="password" />
+                </div>
+              )
+            }}
+          />
+
           <Button>Fazer login</Button>
         </form>
 
-        <Message className="register">
-          Não tem conta?
-          <Link to="/signUp">Registre-se</Link>
-        </Message>
-
-        <Button variant="outline" onClick={handleLoginWithGoogle}>
+        <Button
+          variant="outline"
+          onClick={handleLoginWithGoogle}
+          className="googleSign"
+        >
           <GoogleLogo />
           <span>Entrar com google</span>
         </Button>
+
+        <Message>
+          Não tem conta?
+          <Link to="/signUp">Registre-se</Link>
+        </Message>
       </Form>
     </Container>
   )

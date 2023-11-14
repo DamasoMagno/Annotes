@@ -2,7 +2,7 @@ import { ComponentProps, ForwardRefExoticComponent } from 'react'
 import { ArrowCounterClockwise, TrashSimple } from 'phosphor-react'
 import { LinkProps } from 'react-router-dom'
 
-import { Container, Default, Trashed } from './styles'
+import { Container, Default, Trashed, Tags } from './styles'
 
 export type AnnotationType = 'default' | 'trashed'
 
@@ -39,7 +39,7 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
         </Trashed>
       )}
 
-      <footer>
+      <Tags>
         {type === 'trashed' ? (
           <>
             <span>Remoção em 3 dias</span>
@@ -65,7 +65,7 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
             </button>
           </>
         )}
-      </footer>
+      </Tags>
     </Container>
   )
 }
