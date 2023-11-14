@@ -51,10 +51,15 @@ export const TrashAlert = styled.div`
     cursor: pointer;
     background-color: #202024;
     padding: 0.5rem 1rem;
+    transition: filter 0.25s;
 
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      filter: brightness(0.95);
+    }
   }
 
   @media (max-width: 568px) {

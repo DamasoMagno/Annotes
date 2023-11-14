@@ -1,7 +1,8 @@
 import { GoogleLogo } from 'phosphor-react'
 import { Link, useNavigate } from 'react-router-dom'
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { toast } from 'react-toastify'
 import { z } from 'zod'
 import {
   GoogleAuthProvider,
@@ -28,7 +29,7 @@ const provider = new GoogleAuthProvider()
 export function SignIn() {
   const navigate = useNavigate()
 
-  const { control, handleSubmit } = useForm<User>({
+  const { register, handleSubmit } = useForm<User>({
     resolver: zodResolver(userSchema),
   })
 
@@ -39,7 +40,9 @@ export function SignIn() {
       navigate('/')
     } catch (error) {
       if (error instanceof FirebaseError) {
-        console.log(error.message)
+        toast('Usuario não encontrado', {
+          type: 'error',
+        })
       }
     }
   }
@@ -59,31 +62,14 @@ export function SignIn() {
 
       <Form>
         <form onSubmit={handleSubmit(handleLoginUser)}>
-          <Controller
-            name="email"
-            control={control}
-            render={(props) => {
-              return (
-                <div className="field">
-                  <label htmlFor="email">E-mail</label>
-                  <Input {...props} id="email" type="email" />
-                </div>
-              )
-            }}
-          />
-          <Controller
-            name="password"
-            control={control}
-            render={(props) => {
-              return (
-                <div className="field">
-                  <label htmlFor="password">Senha</label>
-                  <Input {...props} id="password" type="password" />
-                </div>
-              )
-            }}
-          />
-
+          <div className="field">
+            <label htmlFor="email">E-mail</label>
+            <Input {...register('email')} id="email" type="email" />
+          </div>
+          <div className="field">
+            <label htmlFor="password">Senha</label>
+            <Input {...register('password')} id="password" type="password" />
+          </div>
           <Button>Fazer login</Button>
         </form>
 

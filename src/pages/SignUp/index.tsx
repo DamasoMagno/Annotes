@@ -1,4 +1,4 @@
-import { useForm, Controller } from 'react-hook-form'
+import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Link, useNavigate } from 'react-router-dom'
@@ -10,6 +10,7 @@ import { Input } from '../../components/Input'
 import { Container, Description, Form, SignInMessge } from './styles'
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { auth } from '../../services/firebase'
+import { toast } from 'react-toastify'
 
 const userSchema = z.object({
   name: z.string(),
@@ -22,7 +23,7 @@ type User = z.infer<typeof userSchema>
 export function SignUp() {
   const navigate = useNavigate()
 
-  const { handleSubmit, control } = useForm<User>({
+  const { handleSubmit, register } = useForm<User>({
     resolver: zodResolver(userSchema),
   })
 
@@ -41,7 +42,9 @@ export function SignUp() {
       navigate('/login')
     } catch (error) {
       if (error instanceof FirebaseError) {
-        console.log(error.message)
+        toast('Usuario não encontrado', {
+          type: 'error',
+        })
       }
     }
   }
@@ -55,42 +58,20 @@ export function SignUp() {
 
       <Form>
         <form onSubmit={handleSubmit(handleRegisterUser)}>
-          <Controller
-            name="name"
-            control={control}
-            render={(props) => {
-              return (
-                <div className="field">
-                  <label htmlFor="email">E-mail</label>
-                  <Input {...props} id="email" type="email" />
-                </div>
-              )
-            }}
-          />
-          <Controller
-            name="email"
-            control={control}
-            render={(props) => {
-              return (
-                <div className="field">
-                  <label htmlFor="email">E-mail</label>
-                  <Input {...props} id="email" type="email" />
-                </div>
-              )
-            }}
-          />
-          <Controller
-            name="password"
-            control={control}
-            render={(props) => {
-              return (
-                <div className="field">
-                  <label htmlFor="password">Senha</label>
-                  <Input {...props} id="password" type="password" />
-                </div>
-              )
-            }}
-          />
+          <div className="field">
+            <label htmlFor="name">Nome</label>
+            <Input {...register('name')} id="name" />
+          </div>
+
+          <div className="field">
+            <label htmlFor="email">E-mail</label>
+            <Input {...register('email')} id="email" type="email" />
+          </div>
+
+          <div className="field">
+            <label htmlFor="password">Senha</label>
+            <Input {...register('password')} id="password" type="password" />
+          </div>
           <Button>Criar conta</Button>
         </form>
 

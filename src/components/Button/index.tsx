@@ -11,12 +11,7 @@ interface ButtonProps extends ComponentProps<'button'> {
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
   ({ children, variant, active, ...props }, ref) => {
     return (
-      <ButtonContainer
-        ref={ref}
-        variant={variant}
-        className={active ? 'active' : ''}
-        {...props}
-      >
+      <ButtonContainer ref={ref} variant={variant} active={active} {...props}>
         {children}
       </ButtonContainer>
     )

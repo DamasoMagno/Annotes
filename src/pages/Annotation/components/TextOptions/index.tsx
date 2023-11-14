@@ -2,9 +2,9 @@ import { TextBolder, TextItalic } from 'phosphor-react'
 import { Editor } from '@tiptap/react'
 
 import { Button } from '../../../../components/Button'
-import { SelectTags } from '../../../../components/SelectTags'
 
 import { Options, ToolbarRoot } from './styles'
+import { SelectTags } from '../../../../components/SelectTags'
 
 interface TextOptionsProps {
   annotation: Editor | null

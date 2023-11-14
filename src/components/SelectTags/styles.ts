@@ -1,5 +1,5 @@
-import { css, styled } from 'styled-components'
-import Multiselect from 'multiselect-react-dropdown'
+import * as Modal from '@radix-ui/react-alert-dialog'
+import styled, { css } from 'styled-components'
 
 export type SelectTagVariants = 'ghost'
 
@@ -7,16 +7,48 @@ interface SelectTagProps {
   variant?: SelectTagVariants
 }
 
-interface TagsProps {
-  position: 'left' | 'right'
-}
+export const Overlay = styled(Modal.Overlay)`
+  background-color: rgba(10, 10, 10, 0.5);
+  position: fixed;
+  inset: 0;
+`
 
-export const Container = styled.div`
-  position: relative;
+export const Content = styled(Modal.Content)`
+  background: rgba(10, 10, 10, 1);
+  position: fixed;
+  max-height: 45.8125rem;
+  height: 90%;
+  width: 90%;
+  max-width: 450px;
+  top: 50%;
+  right: 50%;
+  border-radius: 0.5rem;
+  transform: translate(50%, -50%);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
 
-  &:focus-within {
-    div {
-      display: block;
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+
+    h3 {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    button {
+      background-color: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      width: 1.25rem;
+      height: 1.25rem;
+      color: white;
+      cursor: pointer;
     }
   }
 `
@@ -58,72 +90,116 @@ export const SelectTag = styled.button<SelectTagProps>`
   }
 `
 
-export const Tags = styled(Multiselect)<TagsProps>`
-  position: absolute;
-  display: none;
-  bottom: -5px;
-  transform: translateY(100%);
-  width: 100%;
-  min-width: 200px;
-  background: #18181b;
-  border: 0;
-  outline: 0;
-  border-radius: 8px;
-  height: 100%;
+export const TagList = styled.div`
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  max-height: 50%;
+  overflow-y: scroll;
 
-  ${(props) => {
-    return css`
-      ${props.position}: 0;
-    `
-  }}
-
-  @media (min-width: 768px) {
-    width: 300px;
+  &::-webkit-scrollbar {
+    display: none;
   }
+`
 
-  .searchWrapper {
+export const Tag = styled.div`
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.25rem;
+  border-radius: 0.25rem;
+  background: rgba(39, 39, 42, 0.15);
+  color: #e2e8f0;
+
+  button {
+    background-color: transparent;
     border: 0;
-    padding: 0.5rem 1rem;
-    display: flex;
+    cursor: pointer;
+    color: white;
 
-    input {
-      color: ${(props) => props.theme.colors['--gray-300']};
+    &.tag-name {
+      padding: 1rem;
       width: 100%;
-      flex: 1;
+      height: 100%;
+      text-align: left;
+    }
+
+    &.trash {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 8px;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.25);
+      }
     }
   }
+`
 
-  .optionListContainer {
-    background-color: #18181b;
-    max-height: 13rem;
+export const MarkedTags = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .current-tags {
+    max-height: 200px;
     overflow-y: scroll;
-    border-radius: 0;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid rgba(10, 10, 10, 0.25);
+    background: rgba(0, 0, 0, 0.5);
 
     &::-webkit-scrollbar {
-      width: 0px;
+      display: none;
     }
 
-    ul {
-      border: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem;
 
-      &::-webkit-scrollbar {
-        width: 5px;
-      }
+    li {
+      color: ${(props) => props.theme.colors['--gray-300']};
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+      border-radius: 1.5rem;
+      background: rgba(51, 51, 51, 0.25);
 
-      &::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 10px;
-      }
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
 
-      li {
-        border-radius: 8px;
-        color: ${(props) => props.theme.colors['--gray-300']};
-      }
-
-      .highlightOption,
-      li:hover {
-        background-color: rgba(255, 255, 255, 0.15);
+      button {
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        color: white;
+        cursor: pointer;
       }
     }
+  }
+
+  > button {
+    background-color: transparent;
+    border: 0;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    height: 3rem;
+    padding: 0 1rem;
   }
 `

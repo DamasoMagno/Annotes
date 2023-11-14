@@ -4,6 +4,7 @@ export type ButtonVariants = 'outline' | 'ghost'
 
 interface ButtonProps {
   variant?: ButtonVariants
+  active?: boolean
 }
 
 export const ButtonContainer = styled.button<ButtonProps>`
@@ -28,9 +29,7 @@ export const ButtonContainer = styled.button<ButtonProps>`
     flex: 1;
   }
 
-  &.active {
-    background: rgba(255, 255, 255, 0.07);
-  }
+  ${(props) => props.active && 'background: rgba(255, 255, 255, 0.07)'}
 
   ${(props) => {
     switch (props.variant) {

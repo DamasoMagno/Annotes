@@ -4,19 +4,21 @@ import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
 
 import { AnnotationsList, Container } from './styles'
-import { CreateTag } from '../../components/CreateTag'
+import { SelectTags } from '../../components/SelectTags'
+import { Tag } from '../../components/Tag'
 
 export function Annotations() {
   return (
     <Container>
       <div className="filters">
         <Input placeholder="Buscar anotações" icon={MagnifyingGlass} />
-        <CreateTag />
+        <SelectTags />
       </div>
 
       <ul className="tags">
-        <li>lembranças</li>
-        <li>+2</li>
+        <Tag>Hello</Tag>
+        <Tag>Hello</Tag>
+        <Tag>+2</Tag>
       </ul>
 
       <AnnotationsList>

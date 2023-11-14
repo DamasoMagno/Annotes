@@ -7,13 +7,11 @@ interface SidebarProps {
 export const SidebarContainer = styled.aside<SidebarProps>`
   display: ${(props) => (props.open ? 'flex' : 'none')};
   flex-direction: column;
-
   color: ${(props) => props.theme.colors['--white']};
   background: ${(props) => props.theme.colors['--neutral-950']};
   height: 100vh;
   width: 100%;
-
-  z-index: 2;
+  z-index: 1;
   position: fixed;
 
   @media (min-width: 1024px) {
@@ -56,16 +54,19 @@ export const SidebarContainer = styled.aside<SidebarProps>`
     a {
       text-decoration: none;
       font-size: 1rem;
+      text-align: center;
       color: ${(props) => props.theme.colors['--gray-400']};
       transition: color 0.25s;
-
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
 
       &.active,
       &:hover {
         color: ${(props) => props.theme.colors['--gray-200']};
+      }
+    }
+
+    @media (min-width: 1024px) {
+      a {
+        text-align: left;
       }
     }
   }

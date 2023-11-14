@@ -1,10 +1,10 @@
 import Placeholder from '@tiptap/extension-placeholder'
 import StarterKit from '@tiptap/starter-kit'
 import Document from '@tiptap/extension-document'
-import { database } from '../../services/firebase'
 import { useEditor } from '@tiptap/react'
-
 import { ref, set } from 'firebase/database'
+
+import { database } from '../../services/firebase'
 
 import { Editor } from './components/Editor'
 
@@ -14,8 +14,6 @@ const CustomDocument = Document.extend({
   content: 'heading block*',
 })
 
-const content = '<h1>awdawd</h1><p>awdad</p>'
-
 export function Annotation() {
   const annotation = useEditor({
     extensions: [
@@ -24,13 +22,7 @@ export function Annotation() {
         document: false,
       }),
       Placeholder.configure({
-        placeholder: ({ node }) => {
-          if (node.type.name === 'heading') {
-            return 'Qual titulo ?'
-          }
-
-          return 'Can you add some further context?'
-        },
+        placeholder: 'Can you add some further context?',
       }),
     ],
     onUpdate: async ({ editor }) => {
@@ -39,7 +31,6 @@ export function Annotation() {
         content: editor.getHTML(),
       })
     },
-    content,
   })
 
   return (
