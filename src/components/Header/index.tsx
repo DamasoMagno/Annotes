@@ -1,4 +1,4 @@
-import { BellSimple, CaretLeft, List, Plus, ShareNetwork } from 'phosphor-react'
+import { CaretLeft, List, Plus } from 'phosphor-react'
 import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './components/Avatar'
@@ -42,21 +42,9 @@ export function Header({ onOpenSideBar }: HeaderProps) {
 
       <div className="options">
         <Actions>
-          {annotesPage && (
-            <ShareAnnotation>
-              <button title="Compartilhar">
-                <span>compartilhar</span>
-                <ShareNetwork />
-              </button>
-            </ShareAnnotation>
-          )}
+          {annotesPage && <ShareAnnotation />}
 
-          <Notification>
-            <button className="notification" title="Notificações">
-              <BellSimple />
-              <div />
-            </button>
-          </Notification>
+          <Notification />
 
           <button onClick={onOpenSideBar} className="menu">
             <List />

@@ -47,10 +47,94 @@ export function SelectTags({ variant }: SelectTagsProps) {
                 <TrashSimple />
               </button>
             </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
+            <Tag>
+              <button className="tag-name">Escola</button>
+              <button className="trash">
+                <TrashSimple />
+              </button>
+            </Tag>
           </TagList>
 
           <MarkedTags>
             <ul className="current-tags">
+              <li>
+                lembranças
+                <button>
+                  <X />
+                </button>
+              </li>
               <li>
                 lembranças
                 <button>

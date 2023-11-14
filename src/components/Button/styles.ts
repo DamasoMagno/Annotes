@@ -29,10 +29,10 @@ export const ButtonContainer = styled.button<ButtonProps>`
     flex: 1;
   }
 
-  ${(props) => props.active && 'background: rgba(255, 255, 255, 0.07)'}
-
   ${(props) => {
-    switch (props.variant) {
+    const { variant, active } = props
+
+    switch (variant) {
       case 'outline':
         return css`
           background-color: transparent;
@@ -41,7 +41,9 @@ export const ButtonContainer = styled.button<ButtonProps>`
         `
       case 'ghost':
         return css`
-          background-color: transparent;
+          background-color: ${active
+            ? 'rgba(255, 255, 255, 0.07)'
+            : 'transparent'};
           transition: background 0.25s;
 
           &:hover {

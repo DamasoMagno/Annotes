@@ -1,19 +1,19 @@
-import { ReactNode } from 'react'
 import * as Popup from '@radix-ui/react-popover'
-import { LockOpen, Share, X } from 'phosphor-react'
+import { LockOpen, Share, ShareNetwork, X } from 'phosphor-react'
 
 import { Button } from '../../../Button'
 
-import { Actions, Content } from './styles'
+import { Actions, Content, Trigger } from './styles'
 
-interface ShareAnnotationProps {
-  children: ReactNode
-}
-
-export function ShareAnnotation({ children }: ShareAnnotationProps) {
+export function ShareAnnotation() {
   return (
     <Popup.Root>
-      <Popup.Trigger asChild>{children}</Popup.Trigger>
+      <Trigger asChild>
+        <button title="Compartilhar">
+          <span>compartilhar</span>
+          <ShareNetwork />
+        </button>
+      </Trigger>
 
       <Popup.Portal>
         <Content>

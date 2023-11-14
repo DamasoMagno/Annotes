@@ -1,18 +1,18 @@
-import { ReactNode } from 'react'
 import * as Popup from '@radix-ui/react-popover'
 import { Link } from 'react-router-dom'
-import { X } from 'phosphor-react'
+import { BellSimple, X } from 'phosphor-react'
 
-import { Content, Notifications } from './styles'
+import { Content, Notifications, Trigger } from './styles'
 
-interface Notification {
-  children: ReactNode
-}
-
-export function Notification({ children }: Notification) {
+export function Notification() {
   return (
     <Popup.Root>
-      <Popup.Trigger asChild>{children}</Popup.Trigger>
+      <Trigger asChild>
+        <button title="Notificações">
+          <BellSimple />
+          <div />
+        </button>
+      </Trigger>
 
       <Popup.Portal>
         <Content>

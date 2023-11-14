@@ -8,25 +8,25 @@ interface SelectTagProps {
 }
 
 export const Overlay = styled(Modal.Overlay)`
-  background-color: rgba(10, 10, 10, 0.5);
+  background-color: rgba(10, 10, 10, 0.75);
   position: fixed;
   inset: 0;
 `
 
 export const Content = styled(Modal.Content)`
   background: rgba(10, 10, 10, 1);
-  position: fixed;
-  max-height: 45.8125rem;
   height: 90%;
   width: 90%;
   max-width: 450px;
-  top: 50%;
-  right: 50%;
-  border-radius: 0.5rem;
-  transform: translate(50%, -50%);
-  padding: 1.5rem;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
   display: flex;
   flex-direction: column;
+
+  position: fixed;
+  right: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
 
   header {
     display: flex;
@@ -66,6 +66,16 @@ export const SelectTag = styled.button<SelectTagProps>`
   color: ${(props) => props.theme.colors['--gray-300']};
   cursor: pointer;
 
+  svg {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 728px) {
+    span {
+      display: none;
+    }
+  }
+
   ${(props) => {
     switch (props.variant) {
       case 'ghost':
@@ -78,25 +88,17 @@ export const SelectTag = styled.button<SelectTagProps>`
         `
     }
   }}
-
-  svg {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 728px) {
-    span {
-      display: none;
-    }
-  }
 `
 
 export const TagList = styled.div`
   margin-top: 1rem;
+  height: 100%;
+  max-height: 400px;
+  overflow-y: scroll;
+
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  max-height: 50%;
-  overflow-y: scroll;
 
   &::-webkit-scrollbar {
     display: none;
@@ -149,24 +151,24 @@ export const MarkedTags = styled.div`
   gap: 0.5rem;
 
   .current-tags {
-    max-height: 200px;
+    max-height: 150px;
     overflow-y: scroll;
     width: 100%;
     border-radius: 1rem;
     border: 1px solid rgba(10, 10, 10, 0.25);
     background: rgba(0, 0, 0, 0.5);
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
+    list-style: none;
+    margin-top: 1rem;
+    padding: 1rem 0.5rem;
 
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.3rem;
-    list-style: none;
-    margin-top: 1rem;
-    padding: 1rem;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     li {
       color: ${(props) => props.theme.colors['--gray-300']};

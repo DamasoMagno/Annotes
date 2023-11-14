@@ -1,12 +1,52 @@
 import styled from 'styled-components'
 import * as Popover from '@radix-ui/react-popover'
 
+export const Trigger = styled(Popover.Trigger)`
+  background-color: transparent;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  border: 0;
+  cursor: pointer;
+  position: relative;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 8px;
+  transition: background 0.25s;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  svg {
+    font-size: 1.125rem;
+  }
+
+  span {
+    display: none;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+
+  @media (min-width: 1024px) {
+    span {
+      display: block;
+    }
+
+    svg {
+      font-size: 1.25rem;
+    }
+  }
+`
+
 export const Content = styled(Popover.Content)`
   background-color: ${(props) => props.theme.colors['--zinc-950']};
   border-radius: 8px;
   width: 22.5rem;
   position: relative;
-  margin-top: 0.75rem;
+  margin-top: 0.5rem;
   margin-right: 0.5rem;
 
   display: flex;
@@ -14,7 +54,7 @@ export const Content = styled(Popover.Content)`
 
   header {
     color: ${(props) => props.theme.colors['--white']};
-    font-size: 1.125rem;
+    font-size: 1rem;
     padding: 1rem 1.5rem;
     font-weight: 600;
 

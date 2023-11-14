@@ -2,9 +2,9 @@ import Placeholder from '@tiptap/extension-placeholder'
 import StarterKit from '@tiptap/starter-kit'
 import Document from '@tiptap/extension-document'
 import { useEditor } from '@tiptap/react'
-import { ref, set } from 'firebase/database'
+// import { ref, set } from 'firebase/database'
 
-import { database } from '../../services/firebase'
+// import { database } from '../../services/firebase'
 
 import { Editor } from './components/Editor'
 
@@ -22,15 +22,23 @@ export function Annotation() {
         document: false,
       }),
       Placeholder.configure({
-        placeholder: 'Can you add some further context?',
+        showOnlyWhenEditable: true,
+        placeholder: ({ node }) => {
+          if (node.type.name === 'heading') {
+            return 'Escreva o título'
+          }
+
+          return 'O que você deseja anotar?'
+        },
       }),
     ],
-    onUpdate: async ({ editor }) => {
-      const path = ref(database, 'users/1')
-      set(path, {
-        content: editor.getHTML(),
-      })
-    },
+    editable: true,
+    // onUpdate: async ({ editor }) => {
+    //   const path = ref(database, 'users/1')
+    //   set(path, {
+    //     content: editor.getHTML(),
+    //   })
+    // },
   })
 
   return (

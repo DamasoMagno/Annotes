@@ -40,64 +40,28 @@ export const Actions = styled.div`
   margin-left: auto;
   align-items: center;
 
-  @media (min-width: 1024px) {
-    .menu {
-      display: none;
-    }
-  }
-
-  button {
+  .menu {
     background-color: transparent;
-    color: ${(props) => props.theme.colors['--gray-300']};
     border: 0;
+    border-radius: 4px;
+    width: 2rem;
+    height: 2rem;
+    color: ${(props) => props.theme.colors['--white']};
     cursor: pointer;
-    position: relative;
-    height: 2.5rem;
-    padding: 0 0.75rem;
-    border-radius: 8px;
-    transition: background 0.25s;
+    transition: background-color 0.25s;
 
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-
-    svg {
-      font-size: 1.125rem;
-    }
-
-    span {
-      display: none;
-      font-size: 1rem;
-    }
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.05);
-    }
-
-    @media (min-width: 1024px) {
-      span {
-        display: block;
-      }
-
-      svg {
-        font-size: 1.25rem;
-      }
+      background-color: rgba(255, 255, 255, 0.1);
     }
   }
 
-  .notification {
-    position: relative;
-
-    div {
-      width: 8px;
-      height: 8px;
-      border-radius: 100%;
-      background: #ef4444;
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateX(-100%);
+  @media (min-width: 1024px) {
+    .menu {
+      display: none;
     }
   }
 `
