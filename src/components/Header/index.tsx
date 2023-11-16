@@ -51,7 +51,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
           </button>
         </Actions>
 
-        <Avatar src="https://github.com/DamasoMagno.png" />
+        <Avatar src="https://github.com/DamasoMagno.png" alt="Damaso Magno" />
       </div>
     </HeaderContainer>
   )

@@ -1,5 +1,5 @@
 import * as Modal from '@radix-ui/react-alert-dialog'
-import { MagnifyingGlass, TrashSimple, X, Tag as TagIcon } from 'phosphor-react'
+import { MagnifyingGlass, TrashSimple, X } from 'phosphor-react'
 
 import { Input } from '../Input'
 
@@ -9,23 +9,19 @@ import {
   TagList,
   Tag,
   Overlay,
-  SelectTag,
   SelectTagVariants,
 } from './styles'
+import { ReactNode } from 'react'
 
 interface SelectTagsProps {
   variant?: SelectTagVariants
+  children: ReactNode
 }
 
-export function SelectTags({ variant }: SelectTagsProps) {
+export function SelectTags({ children }: SelectTagsProps) {
   return (
     <Modal.Root>
-      <Modal.Trigger asChild>
-        <SelectTag variant={variant}>
-          <span>Tags</span>
-          <TagIcon />
-        </SelectTag>
-      </Modal.Trigger>
+      <Modal.Trigger asChild>{children}</Modal.Trigger>
 
       <Modal.Portal>
         <Overlay />
@@ -47,94 +43,10 @@ export function SelectTags({ variant }: SelectTagsProps) {
                 <TrashSimple />
               </button>
             </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
           </TagList>
 
           <MarkedTags>
             <ul className="current-tags">
-              <li>
-                lembranças
-                <button>
-                  <X />
-                </button>
-              </li>
               <li>
                 lembranças
                 <button>

@@ -15,4 +15,18 @@ export const Options = styled(Toolbar.ToggleGroup)`
   &.formatText {
     margin-right: 1rem;
   }
+
+  .tags {
+    display: flex;
+    gap: 0.25rem;
+
+    @media (max-width: 728px) {
+      max-width: 60%;
+      overflow-x: scroll;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
 `

@@ -13,6 +13,20 @@ export const Container = styled.div`
     align-items: center;
     gap: 0.5rem;
 
+    > button {
+      background: ${(props) => props.theme.colors['--zinc-950']};
+
+      span {
+        display: none;
+      }
+
+      @media (min-width: 728px) {
+        span {
+          display: block;
+        }
+      }
+    }
+
     @media (min-width: 728px) {
       grid-template-columns: 1fr 120px;
     }

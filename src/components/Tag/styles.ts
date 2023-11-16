@@ -6,4 +6,5 @@ export const Container = styled.li`
   border-radius: 8px;
   background-color: #171717;
   font-size: 0.875rem;
+  list-style: none;
 `

@@ -7,17 +7,37 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  textarea {
-    background-color: transparent;
-    border: 0;
-    font-weight: bold;
-    color: white;
-    font-size: 1.5rem;
-    resize: none;
-    outline: 0;
+  .editor {
+    margin-top: 2rem;
 
-    &::-webkit-scrollbar {
-      display: none;
+    .tiptap {
+      color: white;
+      outline: 0;
+      font-size: 1rem;
+
+      h1.is-empty:first-child::before {
+        color: #adb5bd;
+        content: attr(data-placeholder);
+        float: left;
+        height: 0;
+        pointer-events: none;
+      }
+
+      p {
+        line-height: 2;
+
+        &:first-of-type {
+          margin-top: 1.5rem;
+        }
+
+        &.is-empty:before {
+          color: #adb5bd;
+          content: attr(data-placeholder);
+          float: left;
+          height: 0;
+          pointer-events: none;
+        }
+      }
     }
   }
 `

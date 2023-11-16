@@ -1,7 +1,7 @@
 import * as Modal from '@radix-ui/react-alert-dialog'
 import styled, { css } from 'styled-components'
 
-export type SelectTagVariants = 'ghost'
+export type SelectTagVariants = 'ghost' | 'icon'
 
 interface SelectTagProps {
   variant?: SelectTagVariants
@@ -114,6 +114,7 @@ export const Tag = styled.div`
   border-radius: 0.25rem;
   background: rgba(39, 39, 42, 0.15);
   color: #e2e8f0;
+  transition: filter 0.25s;
 
   button {
     background-color: transparent;

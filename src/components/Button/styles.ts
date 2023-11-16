@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
 
-export type ButtonVariants = 'outline' | 'ghost'
+export type ButtonVariants = 'outline' | 'ghost' | 'icon'
 
 interface ButtonProps {
   variant?: ButtonVariants
