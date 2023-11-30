@@ -1,20 +1,14 @@
+import { ReactNode } from 'react'
 import * as Modal from '@radix-ui/react-alert-dialog'
-import { MagnifyingGlass, TrashSimple, X } from 'phosphor-react'
+import { MagnifyingGlass, X } from 'phosphor-react'
 
 import { Input } from '../Input'
+import { Tag } from '../Tag'
+import { Button } from '../Button'
 
-import {
-  Content,
-  MarkedTags,
-  TagList,
-  Tag,
-  Overlay,
-  SelectTagVariants,
-} from './styles'
-import { ReactNode } from 'react'
+import { Content, MarkedTags, Overlay } from './styles'
 
 interface SelectTagsProps {
-  variant?: SelectTagVariants
   children: ReactNode
 }
 
@@ -25,7 +19,6 @@ export function SelectTags({ children }: SelectTagsProps) {
 
       <Modal.Portal>
         <Overlay />
-
         <Content>
           <header>
             <h3>Tags</h3>
@@ -34,29 +27,24 @@ export function SelectTags({ children }: SelectTagsProps) {
             </Modal.Cancel>
           </header>
 
-          <Input placeholder="Digite a tag" icon={MagnifyingGlass} />
+          <main>
+            <Input placeholder="Digite a tag" icon={MagnifyingGlass} />
 
-          <TagList>
-            <Tag>
-              <button className="tag-name">Escola</button>
-              <button className="trash">
-                <TrashSimple />
-              </button>
-            </Tag>
-          </TagList>
-
-          <MarkedTags>
-            <ul className="current-tags">
-              <li>
-                lembranças
+            <MarkedTags>
+              <Tag>
+                Lembranças
                 <button>
                   <X />
                 </button>
-              </li>
-            </ul>
+              </Tag>
+            </MarkedTags>
+          </main>
 
-            <Modal.Action>Selecionar</Modal.Action>
-          </MarkedTags>
+          <footer>
+            <Modal.Action asChild>
+              <Button variant="ghost">Selecionar</Button>
+            </Modal.Action>
+          </footer>
         </Content>
       </Modal.Portal>
     </Modal.Root>

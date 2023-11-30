@@ -1,10 +1,14 @@
 import styled from 'styled-components'
 
 export const Container = styled.li`
-  color: ${(props) => props.theme.colors['--gray-300']};
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  background-color: #171717;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  background-color: ${(props) => props.theme.colors['--zin-850']};
   font-size: 0.875rem;
   list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
 `

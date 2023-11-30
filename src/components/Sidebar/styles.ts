@@ -8,7 +8,7 @@ export const SidebarContainer = styled.aside<SidebarProps>`
   display: ${(props) => (props.open ? 'flex' : 'none')};
   flex-direction: column;
   color: ${(props) => props.theme.colors['--white']};
-  background: ${(props) => props.theme.colors['--neutral-950']};
+  background: ${(props) => props.theme.colors['--zinc-950']};
   height: 100vh;
   width: 100%;
   position: fixed;
@@ -58,15 +58,13 @@ export const SidebarContainer = styled.aside<SidebarProps>`
       color: ${(props) => props.theme.colors['--gray-400']};
       transition: color 0.25s;
 
+      @media (min-width: 1024px) {
+        text-align: left;
+      }
+
       &.active,
       &:hover {
         color: ${(props) => props.theme.colors['--gray-200']};
-      }
-    }
-
-    @media (min-width: 1024px) {
-      a {
-        text-align: left;
       }
     }
   }

@@ -5,21 +5,15 @@ export const Trigger = styled(Popover.Trigger)`
   background-color: transparent;
   color: ${(props) => props.theme.colors['--gray-300']};
   border: 0;
-  cursor: pointer;
-  position: relative;
   height: 2.5rem;
   padding: 0 0.75rem;
   border-radius: 8px;
   transition: background 0.25s;
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
-  svg {
-    font-size: 1.125rem;
-  }
 
   span {
     display: none;
@@ -46,9 +40,7 @@ export const Content = styled(Popover.Content)`
   border-radius: 8px;
   width: 22.5rem;
   position: relative;
-  margin-top: 0.5rem;
-  margin-right: 0.5rem;
-
+  margin: 0.5rem 0.5rem 0 0;
   display: flex;
   flex-direction: column;
 
@@ -71,7 +63,6 @@ export const Content = styled(Popover.Content)`
       color: ${(props) => props.theme.colors['--white']};
       cursor: pointer;
       transition: background-color 0.25s;
-
       display: flex;
       align-items: center;
       justify-content: center;

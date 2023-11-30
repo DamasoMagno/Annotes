@@ -2,22 +2,22 @@ import { MagnifyingGlass, Tag as TagIcon } from 'phosphor-react'
 
 import { Annotation } from '../../components/Annotation'
 import { Input } from '../../components/Input'
-
-import { AnnotationsList, Container } from './styles'
 import { SelectTags } from '../../components/SelectTags'
 import { Tag } from '../../components/Tag'
-import { Button } from '../../components/Button'
+
+import { AnnotationsList, Container, OpenTagsModal } from './styles'
 
 export function Annotations() {
   return (
     <Container>
       <div className="filters">
         <Input placeholder="Buscar anotações" icon={MagnifyingGlass} />
+
         <SelectTags>
-          <Button variant="icon">
+          <OpenTagsModal>
             <span>Tags</span>
             <TagIcon />
-          </Button>
+          </OpenTagsModal>
         </SelectTags>
       </div>
 

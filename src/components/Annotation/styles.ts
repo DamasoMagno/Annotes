@@ -2,9 +2,10 @@ import { Link } from 'react-router-dom'
 import { styled } from 'styled-components'
 
 export const Container = styled.div`
-  background-color: rgba(23, 23, 23, 0.5);
-  border: 1px solid rgba(23, 23, 23, 0.5);
-  border-radius: 4px;
+  background-color: ${(props) => props.theme.colors['--neutral-900']};
+  border: 1px solid ${(props) => props.theme.colors['--neutral-900']};
+
+  border-radius: 8px;
   padding: 1.5rem;
 `
 

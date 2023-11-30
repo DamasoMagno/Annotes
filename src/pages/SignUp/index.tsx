@@ -1,52 +1,18 @@
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
-import { zodResolver } from '@hookform/resolvers/zod'
 import { Link, useNavigate } from 'react-router-dom'
-import { FirebaseError } from 'firebase/app'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
 import { Container, Description, Form, SignInMessge } from './styles'
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
-import { auth } from '../../services/firebase'
-import { toast } from 'react-toastify'
-
-const userSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  password: z.string().min(6),
-})
-
-type User = z.infer<typeof userSchema>
 
 export function SignUp() {
   const navigate = useNavigate()
 
-  const { handleSubmit, register } = useForm<User>({
-    resolver: zodResolver(userSchema),
-  })
+  const { handleSubmit, register } = useForm({})
 
-  const handleRegisterUser = async (user: User) => {
-    try {
-      const response = await createUserWithEmailAndPassword(
-        auth,
-        user.email,
-        user.password,
-      )
-
-      await updateProfile(response.user, {
-        displayName: user.name,
-      })
-
-      navigate('/login')
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        toast('Usuario não encontrado', {
-          type: 'error',
-        })
-      }
-    }
+  const handleRegisterUser = async () => {
+    navigate('/login')
   }
 
   return (
@@ -72,6 +38,7 @@ export function SignUp() {
             <label htmlFor="password">Senha</label>
             <Input {...register('password')} id="password" type="password" />
           </div>
+
           <Button>Criar conta</Button>
         </form>
 

@@ -14,6 +14,18 @@ export const Options = styled(Toolbar.ToggleGroup)`
 
   &.formatText {
     margin-right: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  button {
+    border: 0;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: ${(props) => props.theme.colors['--gray-300']};
   }
 
   .tags {

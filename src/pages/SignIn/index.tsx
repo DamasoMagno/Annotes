@@ -2,20 +2,18 @@ import { GoogleLogo } from 'phosphor-react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { toast } from 'react-toastify'
 import { z } from 'zod'
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword,
-} from 'firebase/auth'
-import { FirebaseError } from 'firebase/app'
-import { auth } from '../../services/firebase'
 
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
-import { Container, Description, Form, Message } from './styles'
+import {
+  Container,
+  Description,
+  Form,
+  Message,
+  SocialSignButton,
+} from './styles'
 
 const userSchema = z.object({
   email: z.string().email(),
@@ -24,8 +22,6 @@ const userSchema = z.object({
 
 type User = z.infer<typeof userSchema>
 
-const provider = new GoogleAuthProvider()
-
 export function SignIn() {
   const navigate = useNavigate()
 
@@ -33,23 +29,7 @@ export function SignIn() {
     resolver: zodResolver(userSchema),
   })
 
-  const handleLoginUser = async (user: User) => {
-    try {
-      await signInWithEmailAndPassword(auth, user.email, user.password)
-
-      navigate('/')
-    } catch (error) {
-      if (error instanceof FirebaseError) {
-        toast('Usuario não encontrado', {
-          type: 'error',
-        })
-      }
-    }
-  }
-
-  const handleLoginWithGoogle = async () => {
-    await signInWithPopup(auth, provider)
-
+  const handleLoginUser = async () => {
     navigate('/')
   }
 
@@ -66,21 +46,19 @@ export function SignIn() {
             <label htmlFor="email">E-mail</label>
             <Input {...register('email')} id="email" type="email" />
           </div>
+
           <div className="field">
             <label htmlFor="password">Senha</label>
             <Input {...register('password')} id="password" type="password" />
           </div>
+
           <Button>Fazer login</Button>
         </form>
 
-        <Button
-          variant="outline"
-          onClick={handleLoginWithGoogle}
-          className="googleSign"
-        >
+        <SocialSignButton>
           <GoogleLogo />
           <span>Entrar com google</span>
-        </Button>
+        </SocialSignButton>
 
         <Message>
           Não tem conta?

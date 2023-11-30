@@ -10,13 +10,13 @@ export const GlobalStyles = createGlobalStyle`
   html {
     transition: font-size .25s;
 
-    @media screen and (max-width: 728px) {
-      font-size: .875rem;
+    @media (max-width: 728px) {
+      font-size: 85.5%;
     }    
   }
 
   body {
-    background: #202024;
+    background: ${(props) => props.theme.colors['--zin-900']};
     height: 100vh;
     -webkit-font-smoothing: antialiased;
   }

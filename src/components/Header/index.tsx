@@ -3,9 +3,9 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './components/Avatar'
 import { ShareAnnotation } from './components/ShareAnnotation'
-import { Notification } from './components/Notification'
+import { Notification } from '../Notification'
 
-import { HeaderContainer, Actions } from './styles'
+import { HeaderContainer, Options } from './styles'
 
 interface HeaderProps {
   onOpenSideBar(): void
@@ -40,8 +40,8 @@ export function Header({ onOpenSideBar }: HeaderProps) {
         <span>{navigateTitle}</span>
       </Link>
 
-      <div className="options">
-        <Actions>
+      <Options>
+        <div>
           {annotesPage && <ShareAnnotation />}
 
           <Notification />
@@ -49,10 +49,10 @@ export function Header({ onOpenSideBar }: HeaderProps) {
           <button onClick={onOpenSideBar} className="menu">
             <List />
           </button>
-        </Actions>
+        </div>
 
-        <Avatar src="https://github.com/DamasoMagno.png" alt="Damaso Magno" />
-      </div>
+        <Avatar />
+      </Options>
     </HeaderContainer>
   )
 }

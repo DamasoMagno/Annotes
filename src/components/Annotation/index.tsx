@@ -1,6 +1,6 @@
 import { ComponentProps, ForwardRefExoticComponent } from 'react'
-import { ArrowCounterClockwise, TrashSimple } from 'phosphor-react'
 import { LinkProps } from 'react-router-dom'
+import { ArrowCounterClockwise, TrashSimple } from 'phosphor-react'
 
 import { Container, Default, Trashed, Tags } from './styles'
 

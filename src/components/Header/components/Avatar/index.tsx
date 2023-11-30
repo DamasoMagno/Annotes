@@ -1,17 +1,14 @@
-import { Root, Fallback } from '@radix-ui/react-avatar'
+import { Root, PrimitiveImageProps } from '@radix-ui/react-avatar'
 
-import { Image } from './styles'
+import { Image, NoImage } from './styles'
 
-interface IAvatarProps {
-  src?: string
-  alt?: string
-}
+interface AvatarProps extends PrimitiveImageProps {}
 
-export function Avatar({ src = '', alt = '' }: IAvatarProps) {
+export function Avatar({ alt, ...props }: AvatarProps) {
   return (
     <Root>
-      <Image src={src} alt={alt} />
-      <Fallback delayMs={350}>DM</Fallback>
+      <Image alt={alt} {...props} />
+      <NoImage delayMs={350}>DM</NoImage>
     </Root>
   )
 }

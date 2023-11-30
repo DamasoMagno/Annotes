@@ -4,15 +4,18 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   gap: 2px;
-  background: ${(props) => props.theme.colors['--zinc-950']};
+  background: rgba(38, 38, 38, 0.5);
   color: ${(props) => props.theme.colors['--gray-300']};
   border: 1px solid transparent;
   border-radius: 8px;
   width: 100%;
-  padding-right: 1rem;
+
+  &:has(svg) {
+    padding-right: 0.5rem;
+  }
 
   &:focus-within {
-    border: 1px solid #005b41;
+    border: 1px solid ${(props) => props.theme.colors['--green-500']};
   }
 
   input {
@@ -28,5 +31,6 @@ export const Container = styled.div`
   svg {
     width: 1rem;
     height: 1rem;
+    color: ${(props) => props.theme.colors['--gray-400']};
   }
 `

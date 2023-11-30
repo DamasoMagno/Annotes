@@ -10,13 +10,13 @@ export const Container = styled.div`
 `
 
 export const TrashAlert = styled.div`
-  border-radius: 0.5rem;
+  border-radius: 8px;
   border: 1px solid rgba(10, 10, 10, 0.25);
   background: rgba(10, 10, 10, 0.25);
   color: ${(props) => props.theme.colors['--gray-300']};
-  padding: 1rem;
-  width: 80%;
-  max-width: 650px;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  max-width: 42.6812rem;
 
   display: flex;
   align-items: center;
@@ -26,7 +26,10 @@ export const TrashAlert = styled.div`
   .message {
     display: flex;
     align-items: center;
-    gap: 1rem;
+
+    p {
+      font-size: 1rem;
+    }
 
     svg {
       border-radius: 0.375rem;
@@ -38,10 +41,6 @@ export const TrashAlert = styled.div`
       align-items: center;
       justify-content: center;
     }
-
-    p {
-      line-height: 1.6;
-    }
   }
 
   button {
@@ -49,7 +48,7 @@ export const TrashAlert = styled.div`
     border: 0;
     color: ${(props) => props.theme.colors['--gray-300']};
     cursor: pointer;
-    background-color: #202024;
+    background-color: ${(props) => props.theme.colors['--red-500']};
     padding: 0.5rem 1rem;
     transition: filter 0.25s;
 
@@ -76,5 +75,5 @@ export const AnnotationList = styled.div`
 
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.875rem;
 `

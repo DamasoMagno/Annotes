@@ -1,5 +1,5 @@
 import * as Popup from '@radix-ui/react-popover'
-import { LockOpen, Share, ShareNetwork, X } from 'phosphor-react'
+import { ShareNetwork, X } from 'phosphor-react'
 
 import { Button } from '../../../Button'
 
@@ -29,12 +29,11 @@ export function ShareAnnotation() {
 
           <Actions>
             <Button variant="ghost">
-              <LockOpen />
-              <span>publico</span>
+              <span>Publico</span>
             </Button>
+
             <Button>
-              <Share />
-              <span>copiar link</span>
+              <span>Copiar link</span>
             </Button>
           </Actions>
         </Content>

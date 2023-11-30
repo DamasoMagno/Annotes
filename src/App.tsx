@@ -5,13 +5,13 @@ import { ToastContainer } from 'react-toastify'
 import { Router } from './routes'
 
 import { GlobalStyles } from './styles/Global'
-import { defaultThemes } from './styles/themes/defaultTheme'
+import { defaultTheme } from './styles/themes/defaultTheme'
 
 import 'react-toastify/dist/ReactToastify.css'
 
 export function App() {
   return (
-    <ThemeProvider theme={defaultThemes}>
+    <ThemeProvider theme={defaultTheme}>
       <BrowserRouter>
         <Router />
         <GlobalStyles />

@@ -1,8 +1,5 @@
 import { NavLink, useNavigate } from 'react-router-dom'
 import { X } from 'phosphor-react'
-import { signOut } from 'firebase/auth'
-
-import { auth } from '../../services/firebase'
 
 import { Button } from '../Button'
 
@@ -17,7 +14,6 @@ export function Sidebar({ sidebarIsOpen, onCloseSidebar }: SidebarProps) {
   const navigate = useNavigate()
 
   const logout = async () => {
-    await signOut(auth)
     navigate('/login')
   }
 

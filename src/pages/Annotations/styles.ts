@@ -13,20 +13,6 @@ export const Container = styled.div`
     align-items: center;
     gap: 0.5rem;
 
-    > button {
-      background: ${(props) => props.theme.colors['--zinc-950']};
-
-      span {
-        display: none;
-      }
-
-      @media (min-width: 728px) {
-        span {
-          display: block;
-        }
-      }
-    }
-
     @media (min-width: 728px) {
       grid-template-columns: 1fr 120px;
     }
@@ -46,4 +32,22 @@ export const AnnotationsList = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+`
+
+export const OpenTagsModal = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  border: 0;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  background: rgba(38, 38, 38, 0.5);
+  cursor: pointer;
+  padding: 1rem;
+
+  span {
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
 `

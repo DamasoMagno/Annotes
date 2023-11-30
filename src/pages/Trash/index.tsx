@@ -16,7 +16,7 @@ export function Trash() {
             <p>Suas anotações serão removidas em até 7 dias</p>
           </div>
 
-          <button>excluir anotações</button>
+          <button>Excluir anotações</button>
         </TrashAlert>
 
         <AnnotationList>
