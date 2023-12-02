@@ -16,7 +16,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    background: ${(props) => props.theme.colors['--zin-900']};
+    background: ${(props) => props.theme.colors['--zinc-900']};
     height: 100vh;
     -webkit-font-smoothing: antialiased;
   }

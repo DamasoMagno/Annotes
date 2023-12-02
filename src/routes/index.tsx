@@ -12,14 +12,14 @@ export function Router() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />}>
-        <Route path="" element={<Annotations />} />
-        <Route path="/annote" element={<Annotation />} />
-        <Route path="trash" element={<Trash />} />
+        <Route path="/" element={<Annotations />} />
+        <Route path="/annotation" element={<Annotation />} />
+        <Route path="/trash" element={<Trash />} />
       </Route>
 
       <Route path="/">
-        <Route path="login" element={<SignIn />} />
-        <Route path="signup" element={<SignUp />} />
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
       </Route>
     </Routes>
   )

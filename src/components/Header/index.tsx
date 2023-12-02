@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 import { Avatar } from './components/Avatar'
 import { ShareAnnotation } from './components/ShareAnnotation'
-import { Notification } from '../Notification'
+import { Notification } from './components/Notification'
 
 import { HeaderContainer, Options } from './styles'
 
@@ -20,7 +20,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
       navigateTitle: 'Nova anotação',
       navigateIcon: <Plus />,
     },
-    '/annote': {
+    '/annotation': {
       url: '/',
       navigateTitle: 'Anotações',
       navigateIcon: <CaretLeft />,
@@ -30,7 +30,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
   const annotesPage = pathname === '/annote'
 
   const { url, navigateIcon, navigateTitle } = annotesPage
-    ? pages['/annote']
+    ? pages['/annotation']
     : pages['/']
 
   return (
