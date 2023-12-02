@@ -18,14 +18,16 @@ export const Options = styled(Toolbar.ToggleGroup)`
     gap: 1rem;
   }
 
-  button {
+  .tag {
     border: 0;
     background: transparent;
     display: flex;
     align-items: center;
+    border-radius: 8px;
     justify-content: center;
     font-size: 1.25rem;
     color: ${(props) => props.theme.colors['--gray-300']};
+    cursor: pointer;
   }
 
   .tags {
@@ -40,5 +42,21 @@ export const Options = styled(Toolbar.ToggleGroup)`
         display: none;
       }
     }
+  }
+`
+
+export const Formatter = styled(Toolbar.ToggleItem)`
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  border-radius: 8px;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: ${(props) => props.theme.colors['--gray-300']};
+  cursor: pointer;
+
+  &[data-state='on'] {
+    background: #333;
   }
 `

@@ -1,17 +1,16 @@
 import {
   TextBolder,
   TextItalic,
-  Tag as TagIcon,
+  Tag as IconTag,
   TextUnderline,
 } from 'phosphor-react'
 import { Editor } from '@tiptap/react'
-
 import { Button } from '@radix-ui/react-toolbar'
 
 import { SelectTags } from '../../../../components/SelectTags'
 import { Tag } from '../../../../components/Tag'
 
-import { Options, ToolbarRoot } from './styles'
+import { Options, ToolbarRoot, Formatter } from './styles'
 
 interface TextOptionsProps {
   annotation: Editor | null
@@ -25,25 +24,30 @@ export function TextOptions({ annotation }: TextOptionsProps) {
         aria-label="Text Formatting"
         className="formatText"
       >
-        <Button onClick={() => annotation?.chain().focus().toggleBold().run()}>
+        <Formatter
+          value="Bold"
+          onClick={() => annotation?.chain().focus().toggleBold().run()}
+        >
           <TextBolder />
-        </Button>
-        <Button
+        </Formatter>
+        <Formatter
+          value="Italic"
           onClick={() => annotation?.chain().focus().toggleItalic().run()}
         >
           <TextItalic />
-        </Button>
-        <Button
+        </Formatter>
+        <Formatter
+          value="Underline"
           onClick={() => annotation?.chain().focus().toggleUnderline().run()}
         >
           <TextUnderline />
-        </Button>
+        </Formatter>
       </Options>
 
       <Options type="single">
         <SelectTags>
-          <Button>
-            <TagIcon />
+          <Button className="tag">
+            <IconTag />
           </Button>
         </SelectTags>
 

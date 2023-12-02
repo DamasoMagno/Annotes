@@ -43,9 +43,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
       <Options>
         <div>
           {annotesPage && <ShareAnnotation />}
-
           <Notification />
-
           <button onClick={onOpenSideBar} className="menu">
             <List />
           </button>

@@ -9,8 +9,8 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
 
-  @media (min-width: 1024px) {
-    .content {
+  .content {
+    @media (min-width: 1024px) {
       margin-left: 320px;
     }
   }
