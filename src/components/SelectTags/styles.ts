@@ -50,7 +50,7 @@ export const SelectTag = styled.button<SelectTagProps>`
 `
 
 export const Content = styled(Modal.Content)`
-  background: ${(props) => props.theme.colors['--zin-900']};
+  background: ${(props) => props.theme.colors['--zinc-900']};
   height: 90%;
   width: 90%;
   max-width: 450px;
