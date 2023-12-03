@@ -7,7 +7,6 @@ export const Container = styled.div`
   .filters {
     max-width: 478px;
     width: 100%;
-
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
@@ -27,14 +26,7 @@ export const Container = styled.div`
   }
 `
 
-export const AnnotationsList = styled.div`
-  margin-top: 3rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-`
-
-export const OpenTagsModal = styled.button`
+export const ShowTagsModal = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,12 +34,23 @@ export const OpenTagsModal = styled.button`
   border: 0;
   color: ${(props) => props.theme.colors['--gray-300']};
   background: rgba(38, 38, 38, 0.5);
-  cursor: pointer;
   padding: 1rem;
+  cursor: pointer;
 
   span {
     @media (max-width: 768px) {
       display: none;
     }
   }
+
+  &:focus-within {
+    outline: 1px solid ${(props) => props.theme.colors['--green-500']};
+  }
+`
+
+export const AnnotationsList = styled.div`
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 `

@@ -5,7 +5,7 @@ import { Input } from '../../components/Input'
 import { SelectTags } from '../../components/SelectTags'
 import { Tag } from '../../components/Tag'
 
-import { AnnotationsList, Container, OpenTagsModal } from './styles'
+import { AnnotationsList, Container, ShowTagsModal } from './styles'
 
 export function Annotations() {
   return (
@@ -14,10 +14,10 @@ export function Annotations() {
         <Input placeholder="Buscar anotações" icon={MagnifyingGlass} />
 
         <SelectTags>
-          <OpenTagsModal>
+          <ShowTagsModal>
             <span>Tags</span>
             <TagIcon />
-          </OpenTagsModal>
+          </ShowTagsModal>
         </SelectTags>
       </div>
 
@@ -28,7 +28,7 @@ export function Annotations() {
       </ul>
 
       <AnnotationsList>
-        <Annotation to="/annote" />
+        <Annotation to="/annotation" />
       </AnnotationsList>
     </Container>
   )

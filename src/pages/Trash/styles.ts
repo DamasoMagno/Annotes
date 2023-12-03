@@ -17,7 +17,6 @@ export const TrashAlert = styled.div`
   padding: 1rem 1.5rem;
   width: 100%;
   max-width: 42.6812rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -25,21 +24,25 @@ export const TrashAlert = styled.div`
 
   .message {
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 
     p {
       font-size: 1rem;
     }
 
-    svg {
-      border-radius: 0.375rem;
-      background: rgba(32, 32, 36, 0.5);
-      font-size: 1.5rem;
+    div {
+      background-color: #202024;
       padding: 0.25rem;
-
+      border-radius: 0.375rem;
       display: flex;
       align-items: center;
       justify-content: center;
+
+      svg {
+        background: rgba(32, 32, 36, 0.5);
+        font-size: 1rem;
+      }
     }
   }
 
@@ -47,17 +50,16 @@ export const TrashAlert = styled.div`
     border-radius: 8px;
     border: 0;
     color: ${(props) => props.theme.colors['--gray-300']};
-    cursor: pointer;
     background-color: ${(props) => props.theme.colors['--red-500']};
+    cursor: pointer;
     padding: 0.5rem 1rem;
     transition: filter 0.25s;
-
     display: flex;
     align-items: center;
     justify-content: center;
 
     &:hover {
-      filter: brightness(0.95);
+      filter: brightness(0.9);
     }
   }
 

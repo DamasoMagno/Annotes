@@ -16,7 +16,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
 
   const pages = {
     '/': {
-      url: '/annote',
+      url: '/annotation',
       navigateTitle: 'Nova anotação',
       navigateIcon: <Plus />,
     },
@@ -27,7 +27,7 @@ export function Header({ onOpenSideBar }: HeaderProps) {
     },
   }
 
-  const annotesPage = pathname === '/annote'
+  const annotesPage = pathname === '/annotation'
 
   const { url, navigateIcon, navigateTitle } = annotesPage
     ? pages['/annotation']

@@ -1,52 +1,12 @@
 import * as Modal from '@radix-ui/react-alert-dialog'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
 export type SelectTagVariants = 'ghost' | 'icon'
-
-interface SelectTagProps {
-  variant?: SelectTagVariants
-}
 
 export const Overlay = styled(Modal.Overlay)`
   background-color: rgba(10, 10, 10, 0.5);
   position: fixed;
   inset: 0;
-`
-
-export const SelectTag = styled.button<SelectTagProps>`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: 0;
-  border-radius: 8px;
-  width: 100%;
-  height: 3rem;
-  padding: 0 1.5rem;
-  color: ${(props) => props.theme.colors['--gray-300']};
-  cursor: pointer;
-
-  svg {
-    font-size: 1rem;
-  }
-
-  @media (max-width: 728px) {
-    span {
-      display: none;
-    }
-  }
-
-  ${(props) => {
-    switch (props.variant) {
-      case 'ghost':
-        return css`
-          background-color: transparent;
-        `
-      default:
-        return css`
-          background-color: ${(props) => props.theme.colors['--zinc-950']};
-        `
-    }
-  }}
 `
 
 export const Content = styled(Modal.Content)`
@@ -67,11 +27,11 @@ export const Content = styled(Modal.Content)`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 
     h3 {
-      color: white;
-      font-size: 1.5rem;
+      color: ${(props) => props.theme.colors['--white']};
+      font-size: 1.25rem;
     }
 
     button {
@@ -82,6 +42,7 @@ export const Content = styled(Modal.Content)`
       border: 0;
       width: 1.25rem;
       height: 1.25rem;
+      font-size: 1rem;
       color: white;
       cursor: pointer;
     }
@@ -94,7 +55,6 @@ export const Content = styled(Modal.Content)`
 
 export const MarkedTags = styled.div`
   margin-top: 1.5rem;
-
   display: flex;
   align-items: center;
   justify-content: center;

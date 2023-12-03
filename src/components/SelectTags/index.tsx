@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import * as Modal from '@radix-ui/react-alert-dialog'
 import { MagnifyingGlass, X } from 'phosphor-react'
+import * as Modal from '@radix-ui/react-alert-dialog'
 
 import { Input } from '../Input'
 import { Tag } from '../Tag'

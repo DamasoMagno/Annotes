@@ -7,13 +7,7 @@ import { z } from 'zod'
 import { Button } from '../../components/Button'
 import { Input } from '../../components/Input'
 
-import {
-  Container,
-  Description,
-  Form,
-  Message,
-  SocialSignButton,
-} from './styles'
+import { Container, Description, Form, Message } from './styles'
 
 const userSchema = z.object({
   email: z.string().email(),
@@ -55,14 +49,14 @@ export function SignIn() {
           <Button>Fazer login</Button>
         </form>
 
-        <SocialSignButton>
+        <Button variant="outline">
           <GoogleLogo />
           <span>Entrar com google</span>
-        </SocialSignButton>
+        </Button>
 
         <Message>
           Não tem conta?
-          <Link to="/signUp">Registre-se</Link>
+          <Link to="/register">Registre-se</Link>
         </Message>
       </Form>
     </Container>

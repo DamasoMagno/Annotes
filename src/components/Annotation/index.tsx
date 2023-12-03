@@ -8,13 +8,13 @@ export type AnnotationType = 'default' | 'trashed'
 
 interface AnnotationProps
   extends ComponentProps<ForwardRefExoticComponent<LinkProps>> {
-  type?: AnnotationType
+  trashed?: boolean
 }
 
-export function Annotation({ type = 'default', ...props }: AnnotationProps) {
+export function Annotation({ trashed = false, ...props }: AnnotationProps) {
   return (
     <Container>
-      {type === 'default' ? (
+      {!trashed ? (
         <Default {...props}>
           <header>
             <strong>Lorem ipsum</strong>
@@ -40,7 +40,17 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
       )}
 
       <Tags>
-        {type === 'trashed' ? (
+        {!trashed ? (
+          <>
+            <div className="tags">
+              <span>#lorem</span>
+            </div>
+
+            <button>
+              <TrashSimple />
+            </button>
+          </>
+        ) : (
           <>
             <span>Remoção em 3 dias</span>
 
@@ -53,16 +63,6 @@ export function Annotation({ type = 'default', ...props }: AnnotationProps) {
                 <TrashSimple />
               </button>
             </div>
-          </>
-        ) : (
-          <>
-            <div className="tags">
-              <span>#lorem</span>
-            </div>
-
-            <button>
-              <TrashSimple />
-            </button>
           </>
         )}
       </Tags>

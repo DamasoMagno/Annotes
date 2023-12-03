@@ -10,10 +10,6 @@ export const Container = styled.div`
   border-radius: 8px;
   width: 100%;
 
-  &:has(svg) {
-    padding-right: 0.5rem;
-  }
-
   &:focus-within {
     border: 1px solid ${(props) => props.theme.colors['--green-500']};
   }
@@ -32,5 +28,6 @@ export const Container = styled.div`
     width: 1rem;
     height: 1rem;
     color: ${(props) => props.theme.colors['--gray-400']};
+    margin-right: 0.5rem;
   }
 `

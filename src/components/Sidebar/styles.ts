@@ -64,7 +64,7 @@ export const SidebarContainer = styled.aside<SidebarProps>`
 
       &.active,
       &:hover {
-        color: ${(props) => props.theme.colors['--gray-200']};
+        color: ${(props) => props.theme.colors['--gray-100']};
       }
     }
   }

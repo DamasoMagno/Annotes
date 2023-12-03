@@ -5,12 +5,12 @@ import {
   TextUnderline,
 } from 'phosphor-react'
 import { Editor } from '@tiptap/react'
-import { Button } from '@radix-ui/react-toolbar'
+import { ToggleItem } from '@radix-ui/react-toolbar'
 
 import { SelectTags } from '../../../../components/SelectTags'
 import { Tag } from '../../../../components/Tag'
 
-import { Options, ToolbarRoot, Formatter } from './styles'
+import { ToolbarRoot, Button, FormatText, SpecifyTags } from './styles'
 
 interface TextOptionsProps {
   annotation: Editor | null
@@ -19,34 +19,33 @@ interface TextOptionsProps {
 export function TextOptions({ annotation }: TextOptionsProps) {
   return (
     <ToolbarRoot>
-      <Options
-        type="multiple"
-        aria-label="Text Formatting"
-        className="formatText"
-      >
-        <Formatter
+      <FormatText type="multiple" aria-label="Text Formatting">
+        <Button
+          as={ToggleItem}
           value="Bold"
           onClick={() => annotation?.chain().focus().toggleBold().run()}
         >
           <TextBolder />
-        </Formatter>
-        <Formatter
+        </Button>
+        <Button
+          as={ToggleItem}
           value="Italic"
           onClick={() => annotation?.chain().focus().toggleItalic().run()}
         >
           <TextItalic />
-        </Formatter>
-        <Formatter
+        </Button>
+        <Button
+          as={ToggleItem}
           value="Underline"
           onClick={() => annotation?.chain().focus().toggleUnderline().run()}
         >
           <TextUnderline />
-        </Formatter>
-      </Options>
+        </Button>
+      </FormatText>
 
-      <Options type="single">
+      <SpecifyTags type="single">
         <SelectTags>
-          <Button className="tag">
+          <Button>
             <IconTag />
           </Button>
         </SelectTags>
@@ -56,7 +55,7 @@ export function TextOptions({ annotation }: TextOptionsProps) {
           <Tag>Hello</Tag>
           <Tag>+2</Tag>
         </ul>
-      </Options>
+      </SpecifyTags>
     </ToolbarRoot>
   )
 }

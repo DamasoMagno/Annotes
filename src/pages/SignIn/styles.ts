@@ -50,6 +50,7 @@ export const Form = styled.main`
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    margin-bottom: 1.5rem;
 
     .field {
       color: white;
@@ -76,30 +77,5 @@ export const Message = styled.div`
     &:hover {
       text-decoration: underline;
     }
-  }
-`
-
-export const SocialSignButton = styled.button`
-  margin-top: 1.5rem;
-  padding: 0 1rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: filter 0.25s;
-  color: #005b41;
-  border: 1px solid #005b41;
-  height: 3rem;
-  background-color: transparent;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  &:hover {
-    filter: brightness(0.9);
-  }
-
-  span {
-    flex: 1;
   }
 `

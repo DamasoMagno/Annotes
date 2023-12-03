@@ -20,7 +20,7 @@ export function Trash() {
         </TrashAlert>
 
         <AnnotationList>
-          <Annotation type="trashed" to="/" />
+          <Annotation trashed to="/" />
         </AnnotationList>
       </Container>
     </>

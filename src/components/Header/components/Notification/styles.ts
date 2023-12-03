@@ -11,7 +11,6 @@ export const Trigger = styled(Popover.Trigger)`
   padding: 0 0.75rem;
   border-radius: 8px;
   transition: background 0.25s;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -87,7 +86,7 @@ export const Notifications = styled.ul`
   overflow-y: scroll;
 
   &::-webkit-scrollbar {
-    width: 5px;
+    display: none;
   }
 
   &::-webkit-scrollbar-thumb {
