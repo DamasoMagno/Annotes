@@ -32,15 +32,14 @@ export function useAnnotation() {
       }),
     ],
     onUpdate: ({ editor }) => {
-      const { content } = editor.getJSON()
+      const content = editor.getJSON()
       clearTimeout(timer)
 
       timer = setTimeout(() => {
-        console.log(content)
-
         localStorage.setItem('@content', JSON.stringify(content))
       }, 1000)
     },
+    content: JSON.parse(localStorage.getItem('@content') as string),
   })
 
   return {
